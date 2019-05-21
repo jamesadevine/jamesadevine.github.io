@@ -11,49 +11,52 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* First Class (Hons) B.S. in Computer Science, Lancaster University, 2015
+* Ph.D in Computer Science, Lancaster University, 2020 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Summer 2015:
+  * Lancaster University
+  * Co-developed [the micro:bit runtime](https://github.com/lancaster-university/microbit-dal) which supports millions of users worldwide.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
+* Summer 2017: Research Internship
+  * Microsoft Research
+  * Worked with the [Embedded Learning Library (ELL)](https://github.com/microsoft/ELL) team to produce a wake-word recognition demo for low-end microcontrollers.
+
+* Summer 2018: Research Internship
+  * Microsoft Research
+  * Worked within the RiSE team and alongside the [MakeCode]([makecode.com](https://www.microsoft.com/en-us/makecode)) team to produce JACDAC, a [plug-and-play networking protocol for low-end microcontrollers](https://jacdac.org).
+
+* Spring 2019: Research Internship
+  * Microsoft Research
+  * Worked with the RiSE team, Intern Teddy Seyed, and fashion designers based in Brooklyn, NY to conduct a wearable tech fashion show using [JACDAC](https://jacdac.org) to network microcontrollers together.
+
+Awards
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Lancaster University Staff Award for Excellence (for work on the BBC micro:bit).
+* Associate Fellow of the Higher Education Academy (AFHEA).
+* Microsoft PhD scholarship.
+* Grade 6 Violin.
+* Grade 7 Drum kit.
+* Grade 5 Music Theory and Voice.
 
 Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+
+
+<!-- Talks
 ======
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
+  {% endfor %}</ul> -->
+
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+  {% endfor %}</ul> -->

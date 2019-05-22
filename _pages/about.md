@@ -10,7 +10,7 @@ redirect_from:
 
 Greetings!
 
-My name is James Devine and I'm currently a Graduate Student studying at Lancaster University in the UK, supervised by [Joe Finney](https://www.lancaster.ac.uk/scc/about-us/people/joe-finney). My main research interests are curry, beer, and performing live music, although from time to time, I  like to dip my toes into various areas of Computer Science: operating systems, networking, physical computing, and embedded systems.
+My name is James Devine and I'm currently a Graduate Student studying at Lancaster University in the UK, supervised by [Joe Finney](https://www.lancaster.ac.uk/scc/about-us/people/joe-finney) & [Jason Alexander](http://www.jasonalexander.kiwi). My main research interests are curry, beer, and performing live music, although from time to time, I  like to dip my toes into various areas of Computer Science: operating systems, networking, physical computing, and embedded systems.
 
 ## The BBC micro:bit
 

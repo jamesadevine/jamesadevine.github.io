@@ -20,7 +20,7 @@ After an exciting summer working with the likes of ARM, BBC, Farnell, Microsoft,
 
 ## CODAL
 
-Forming the basis of my PhD is CODAL, an evolution of the micro:bit runtime developed for the BBC micro:bit. The <b>c</b>omponent <b>o</b>riented <b>d</b>evice <b>a</b>bstraction <b>l</b>ayer abstracts each hardware component of a microcontroller as a component and is used by [Microsoft MakeCode](https://makecode.com) to enable the easy programming of microcontrollers using [JavaScript/visual programming languages whilst nearing the performance of C/C++](https://dl.acm.org/citation.cfm?id=3211335). CODAL is now used across many devices and processor types including the SAMD, STM32, and NRF5x processor families. CODAL and MakeCode combined make the programming of microcontrollers simpler for novices.
+Forming the basis of my PhD is CODAL, an evolution of the micro:bit runtime developed for the BBC micro:bit. The <b>C</b>omponent <b>O</b>riented <b>D</b>evice <b>A</b>bstraction <b>L</b>ayer abstracts each hardware component of a microcontroller as a component and is used by [Microsoft MakeCode](https://makecode.com) to enable the easy programming of microcontrollers using [JavaScript/visual programming languages whilst nearing the performance of C/C++](https://dl.acm.org/citation.cfm?id=3211335). CODAL is now used across many devices and processor types including the SAMD, STM32, and NRF5x processor families. CODAL and MakeCode combined make the programming of microcontrollers simpler for novices.
 
 ## JACDAC
 

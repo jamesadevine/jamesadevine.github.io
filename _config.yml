@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "James Devine"
   avatar           : "profile.png"
-  bio              : "Graduate Student at Lancaster University"
+  bio              : "Graduate Student, Lancaster University"
   location         : "Lancaster, UK"
   employer         :
   pubmed           :  # ""
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Ba04sPoAAAAJ"
-  email            :
+  email            : "j.devine[at]lancaster.ac.uk"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -159,7 +159,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -255,7 +254,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/London # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

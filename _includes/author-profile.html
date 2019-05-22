@@ -4,13 +4,21 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
+{% assign display_picture = true %}
+
+{% if page.author_picture != nil and page.author_picture == false%}
+  {% assign display_picture = false %}
+{% endif %}
+
 <div itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
+    {% if display_picture == true %}
     {% if author.avatar contains "://" %}
     	<img src="{{ author.avatar }}" alt="{{ author.name }}">
     {% else %}
     	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
+    {% endif %}
     {% endif %}
   </div>
 
@@ -20,7 +28,7 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
+    <button class="btn btn--inverse">Contact</button>
     <ul class="author__urls social-icons">
       {% if author.location %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>

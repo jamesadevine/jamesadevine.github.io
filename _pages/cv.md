@@ -16,20 +16,16 @@ Education
 
 Work experience
 ======
-* Summer 2015:
-  * Lancaster University
+* Summer 2015: Research Associate, Lancaster University
   * Co-developed [the micro:bit runtime](https://github.com/lancaster-university/microbit-dal) which supports millions of users worldwide.
 
-* Summer 2017: Research Internship
-  * Microsoft Research
+* Summer 2017: Research Internship, Microsoft Research
   * Worked with the [Embedded Learning Library (ELL)](https://github.com/microsoft/ELL) team to produce a wake-word recognition demo for low-end microcontrollers.
 
-* Summer 2018: Research Internship
-  * Microsoft Research
+* Summer 2018: Research Internship, Microsoft Research
   * Worked within the RiSE team and alongside the [MakeCode]([makecode.com](https://www.microsoft.com/en-us/makecode)) team to produce JACDAC, a [plug-and-play networking protocol for low-end microcontrollers](https://jacdac.org).
 
-* Spring 2019: Research Internship
-  * Microsoft Research
+* Spring 2019: Research Internship, Microsoft Research
   * Worked with the RiSE team, Intern Teddy Seyed, and fashion designers based in Brooklyn, NY to conduct a wearable tech fashion show using [JACDAC](https://jacdac.org) to network microcontrollers together.
 
 Awards

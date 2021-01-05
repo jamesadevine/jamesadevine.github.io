@@ -88,7 +88,7 @@ author:
   pubmed           :  # ""
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Ba04sPoAAAAJ"
   email            : "t-jamdev@microsoft.com"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :  https://www.researchgate.net/profile/James_Devine6
   uri              :
   bitbucket        :
   codepen          :
@@ -102,7 +102,7 @@ author:
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         :
+  linkedin         : https://www.linkedin.com/in/james-devine-a9371a38/
   orcid            : #""
   pinterest        :
   soundcloud       :

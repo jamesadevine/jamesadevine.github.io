@@ -9,10 +9,14 @@ redirect_from:
 
 {% include base_path %}
 
+Current employer
+======
+* Working with Steve Hodges at Microsoft Research, Cambridge on long tail hardware and physical computing.
+
 Education
 ======
 * First Class (Hons) B.S. in Computer Science, Lancaster University, 2015
-* Ph.D in Computer Science, Lancaster University, 2020 (expected)
+* Ph.D in Computer Science, Lancaster University, 2020
 
 Work experience
 ======
@@ -23,10 +27,10 @@ Work experience
   * Worked with the [Embedded Learning Library (ELL)](https://github.com/microsoft/ELL) team to produce a wake-word recognition demo for low-end microcontrollers.
 
 * Summer 2018: _Research Internship_, __Microsoft Research__
-  * Worked within the RiSE team and alongside the [MakeCode]([makecode.com](https://www.microsoft.com/en-us/makecode)) team to produce JACDAC, a [plug-and-play networking protocol for low-end microcontrollers](https://jacdac.org).
+  * Worked within the RiSE team and alongside the [MakeCode]([makecode.com](https://www.microsoft.com/en-us/makecode)) team to produce JACDAC, a [plug-and-play networking protocol for low-end microcontrollers](https://aka.ms/jacdac).
 
 * Spring 2019: _Research Internship_, __Microsoft Research__
-  * Worked with the RiSE team, Intern Teddy Seyed, and fashion designers based in Brooklyn, NY to conduct a wearable tech fashion show using [JACDAC](https://jacdac.org) to network microcontrollers together.
+  * Worked with the RiSE team, Intern Teddy Seyed, and fashion designers based in Brooklyn, NY to conduct a wearable tech fashion show using [JACDAC](https://aka.ms/jacdac) to network microcontrollers together.
 
 Awards
 ======

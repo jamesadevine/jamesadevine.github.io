@@ -10,7 +10,7 @@ locale                   : "en_GB"
 title                    : "James Devine"
 title_separator          : "-"
 name                     : &name "James Devine"
-description              : &description "Graduate Student at Lancaster University"
+description              : &description "Researcher at Microsoft Research"
 url                      : https://jamesadevine.com # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "jamesadevine/jamesadevine.github.io"
@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "James Devine"
   avatar           : "profile.JPG"
-  bio              : "Graduate Student, Lancaster University"
-  location         : "Lancaster, UK"
+  bio              : "Research, Microsoft Research"
+  location         : "Cambridge, UK"
   employer         :
   pubmed           :  # ""
   googlescholar    : "https://scholar.google.com/citations?hl=en&user=Ba04sPoAAAAJ"
-  email            : "j.devine@lancaster.ac.uk"
+  email            : "t-jamdev@microsoft.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :

@@ -3,7 +3,8 @@
 # This config file is meant for settings that affect your entire site, values
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
+# `jekyll serve -l -H localhost`. If you change this file, please restart the
+# server process.
 
 # Site Settings
 locale: "en_GB"
@@ -20,6 +21,76 @@ words_per_minute: 160
 future: true
 read_more: "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link: false #change to true to add link to talkmap on talks page
+# Basic Site Settings
+site_theme: "default"
+
+# Site Author - The following control what appear as part of the author content on the side bar.
+#               If a field is blank the icon and link will not appear, otherwise it will be shown.
+#               Additional customization can be done by editing /_includes/author-profile.html
+author:
+  # Biographic information
+  bio: "Researcher, Microsoft Research"
+  location: "Cambridge, UK"
+  avatar: "profile.JPG"
+  name: "James Devine"
+  pronouns: # example: "she/her"
+  employer: "Microsoft"
+  uri: # URL
+  email: "james.devine@microsoft.com"
+
+  # Academic websites
+  arxiv: # URL - Update with the correct link to your profile
+  googlescholar: "https://scholar.google.com/citations?user=22dM5lYAAAAJ"
+  impactstory: # URL
+  orcid: "http://orcid.org/0000-0002-9617-7446"
+  semantic: # URL
+  pubmed:
+  researchgate: https://www.researchgate.net/profile/James_Devine6
+  scopus: # URL
+
+  # Repositories and software development
+  bitbucket: # Username - Update with your username on the site
+  codepen: # Username
+  dribbble: # Username
+  github: "jamesadevine"
+  kaggle: # Username
+  stackoverflow: # User number or user number and name (i.e., use "1" or "1/jeff-atwood")
+
+  # Social media
+  bluesky: "jamesadevine.bsky.social" # Replace this with you Bluesky username
+  facebook: # Username
+  flickr: # Username
+  foursquare: # Username
+  goodreads: # Username
+  google_plus: # Username
+  keybase: # Username
+  instagram: # Username
+  lastfm: # Username
+  linkedin: james-devine-a9371a38
+  mastodon: # URL
+  medium: # URL
+  pinterest: # Username
+  soundcloud: # Username
+  steam: # Username
+  telegram: # URL
+  tumblr: # Username
+  twitter: # Username for X / Twitter
+  vine: # Username
+  weibo: # Username
+  wikipedia: # Username
+  xing: # Username
+  youtube: # Username
+  zhihu: # Username
+
+# Publication Category - The following the list of publication categories and their headings
+publication_category:
+  books:
+    title: "Books"
+  manuscripts:
+    title: "Journal Articles"
+  conferences:
+    title: "Conference Papers"
+
 comments:
   provider: # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
@@ -47,6 +118,7 @@ staticman:
       options:
         format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
+  hide: false # change to true to hide the RSS feed in the footer
   path: # blank (default) uses feed.xml
 
 # SEO Related
@@ -72,47 +144,9 @@ social:
 
 # Analytics
 analytics:
-  provider: "google-universal" # false (default), "google", "google-universal", "custom"
+  provider: "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id:
-
-# Site Author
-author:
-  name: "James Devine"
-  avatar: "profile.JPG"
-  bio: "Researcher, Microsoft Research"
-  location: "Cambridge, UK"
-  employer:
-  pubmed: # ""
-  googlescholar: "https://scholar.google.com/citations?hl=en&user=Ba04sPoAAAAJ"
-  email: "james.devine@microsoft.com"
-  researchgate: https://www.researchgate.net/profile/James_Devine6
-  uri:
-  bitbucket:
-  codepen:
-  dribbble:
-  flickr:
-  facebook:
-  foursquare:
-  github: "jamesadevine"
-  google_plus:
-  keybase:
-  instagram:
-  impactstory: #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
-  lastfm:
-  linkedin: https://www.linkedin.com/in/james-devine-a9371a38/
-  orcid: #""
-  pinterest:
-  soundcloud:
-  stackoverflow: # http://stackoverflow.com/users/123456/username
-  steam:
-  tumblr:
-  twitter:
-  vine:
-  weibo:
-  xing:
-  youtube:
-  wikipedia:
 
 # Reading Files
 include:
@@ -124,23 +158,26 @@ exclude:
   - "*.sublime-workspace"
   - .asset-cache
   - .bundle
+  - .github
   - .jekyll-assets-cache
   - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+  - CHANGELOG
+  - Capfile
   - config
+  - Dockerfile
+  - Gemfile
+  - Gruntfile.js
   - gulpfile.js
+  - LICENSE
+  - local
   - log
   - node_modules
-  - package.json
+  - package.json*
+  - Rakefile
+  - README
   - tmp
   - vendor
 keep_files:
@@ -167,7 +204,7 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-# Collections
+# These settings control the types of collections used by the template
 collections:
   teaching:
     output: true
@@ -182,7 +219,7 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Defaults
+# These settings control how pages and collections are included in the site
 defaults:
   # _posts
   - scope:
@@ -251,17 +288,20 @@ timezone: Europe/London # http://en.wikipedia.org/wiki/List_of_tz_database_time_
 
 # Plugins
 plugins:
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-redirect-from
-# mimic GitHub Pages with --safe
+  - jemoji
+
+# Mimic GitHub Pages with --safe
 whitelist:
+  - jekyll-feed
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
+  - jekyll-redirect-from
   - jemoji
 
 # Archives

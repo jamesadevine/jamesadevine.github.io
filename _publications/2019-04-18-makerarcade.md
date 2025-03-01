@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2019-04-18-makerarcade
 excerpt: ''
 date: 2019-04-18
+category: conferences
 venue: 'Extended Abstracts of the 2019 CHI Conference on Human Factors in Computing Systems'
 paperurl: 'https://dl.acm.org/citation.cfm?id=3312809'
 citation: 'Seyed, T., de Halleux, P., Moskal, M., Devine, J., Finney, J., Hodges, S. and Ball, T., 2019, April. MakerArcade: Using Gaming and Physical Computing for Playful Making, Learning, and Creativity. <i>In Extended Abstracts of the 2019 CHI Conference on Human Factors in Computing Systems (p. LBW0174).</i> ACM.'

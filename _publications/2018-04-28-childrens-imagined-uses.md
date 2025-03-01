@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2018-04-28-childrens-imagined-uses
 excerpt: ""
 date: 2018-04-28
+category: conferences
 venue: 'Living in the Internet of Things: Cybersecurity of the IoT'
 paperurl: 'https://digital-library.theiet.org/content/conferences/10.1049/cp.2018.0015'
 citation: "Knowles, B., Finney, J., Beck, S. and Devine, J., 2018. What children's imagined uses of the BBC micro: bit tells us about designing for their IoT privacy, security and safety. <i>Living in the Internet of Things: Cybersecurity of the IoT.</i> IET."

@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2019-03-21-scenario-based-methodology
 excerpt: ''
 date: 2019-05-01
+category: conferences
 venue: 'Designing Interactive Systems (DIS)'
 paperurl: 'http://eprints.lancs.ac.uk/132269/'
 citation: 'Knowles, B., Beck, S., Finney, J. and Devine, J., 2019. A Scenario-Based Methodology for Exploring Risks: Children and Programmable IoT. <i>Designing Interactive Systems (DIS) 2019.</i> ACM.'

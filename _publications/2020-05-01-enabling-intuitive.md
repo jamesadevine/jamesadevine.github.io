@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2020-05-01-enabling-intuitive
 excerpt: ''
 date: 2020-05-01
+category: conferences
 venue: 'the Lancaster University Digital Library'
 paperurl: 'https://eprints.lancs.ac.uk/id/eprint/147404/'
 citation: 'Devine, J. 2020. Enabling intuitive and efficient physical computing. <i>Lancaster University</i>'

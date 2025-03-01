@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2018-06-19-makecode-codal
 excerpt: ''
 date: 2018-06-19
+category: conferences
 venue: 'Languages, Compilers, and Tools for Embedded Systems'
 paperurl: 'https://dl.acm.org/citation.cfm?id=3211335'
 citation: 'Devine, J., Finney, J., de Halleux, P., Moskal, M., Ball, T. and Hodges, S., 2018, June. MakeCode and CODAL: intuitive and efficient embedded systems programming for education. <i>In Proceedings of the 19th ACM SIGPLAN/SIGBED International Conference on Languages, Compilers, and Tools for Embedded Systems (pp. 19-30).</i> ACM.'

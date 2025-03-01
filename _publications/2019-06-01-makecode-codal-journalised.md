@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2019-06-01-makecode-codal-journalised
 excerpt: ''
 date: 2019-06-01
+category: conferences
 venue: 'Journal of System Architecture'
 paperurl: 'https://doi.org/10.1016/j.sysarc.2019.05.005'
 citation: 'Devine, J., Finney, J., de Halleux, P., Moskal, M., Ball, T. and Hodges, S., 2019. MakeCode and CODAL: intuitive and efficient embedded systems programming for education. <i>Journal of Systems Architecture.</i>'

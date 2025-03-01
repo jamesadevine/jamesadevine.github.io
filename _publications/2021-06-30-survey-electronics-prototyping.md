@@ -5,6 +5,7 @@ permalink: /publication/2021-06-30-survey-electronics-prototyping
 excerpt: ''
 date: 2021-06-30
 venue: 'IMWUT'
+category: conferences
 paperurl: 'http://www.raframakers.net/wiki/uploads/Main/ToolkitClassification/paper.pdf'
 citation: 'LAMBRICHTS, MANNU, et al. "A Survey and Taxonomy of Electronics Toolkits for Interactive and Ubiquitous Device Prototyping." (2021).'
 ---

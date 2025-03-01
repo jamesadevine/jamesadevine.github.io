@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2019-05-01-energy-in-schools
 excerpt: ''
 date: 2019-05-01
+category: conferences
 venue: 'Living in the Internet of Things. IET.'
 paperurl: 'http://eprints.lancs.ac.uk/133635/'
 citation: 'New, K., Devine, J., Woodcock, T., Beck, S., Finney, J., Hazas, M., Banks, N., Smith, K. and Bailey, T., 2019. Energy in Schools: Promoting Global Change through Social Technical Deployments. <i>Living in the Internet of Things.</i> IET.'

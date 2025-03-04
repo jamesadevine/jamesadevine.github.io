@@ -23,5 +23,8 @@ main:
   - title: "CV"
     url: /assets/cv.pdf
 
+  - title: "Academia"
+    url: /academia/
+
   # - title: "Guide"
   #   url: /markdown/

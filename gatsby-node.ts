@@ -13,32 +13,52 @@ exports.createPages = async ({
   const result: any = await graphql(
     `
       query {
-      allMdx {
-        edges {
-          node {
+        allMdx {
+          nodes {
             id
             frontmatter {
               slug
+              title
+              date
+              author
+            }
+            internal {
+              contentFilePath
+            }
+            parent {
+              ... on File {
+                absolutePath
+              }
             }
           }
         }
       }
-    }
     `
   );
 
   if (result.errors) {
     reporter.panicOnBuild(
-      'There was an error loading the MDX result',
+      'There was an error loading the MDX/Markdown result',
       result.errors
     );
   }
 
+  // Create pages for MDX files
   result.data?.allMdx.nodes.forEach((node) => {
+    console.log(node)
     createPage({
       path: `/blog/${node.frontmatter?.slug}`,
       component: `${BlogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id },
     });
   });
+
+  // Create pages for Markdown files
+  // result.data?.allMarkdownRemark.nodes.forEach((node) => {
+  //   createPage({
+  //     path: `/blog/${node.frontmatter?.slug}`,
+  //     component: BlogPostTemplate,
+  //     context: { id: node.id, fileAbsolutePath: node.parent?.absolutePath },
+  //   });
+  // });
 };

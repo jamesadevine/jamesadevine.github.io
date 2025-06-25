@@ -25,6 +25,7 @@ const BlogPostTemplate: FC<Props> = ({
                 }}
             >{`${mdx.frontmatter.date} by ${mdx.frontmatter.author}`}</h4>
             <MDXProvider components={mdx.body}>
+                {children}
             </MDXProvider>
         </Container >
     );

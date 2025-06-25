@@ -7,9 +7,7 @@ import Sidebar from "../components/Sidebar";
 const IndexPage: FC = () => (
     <Container>
         <Header />
-        <Sidebar />
         <Container sx={{ py: 5 }}>
-
             <Box as="main" sx={{ textAlign: "center" }}>
                 <Heading as="h1" mb={3}>
                     Welcome to James Devine's Website

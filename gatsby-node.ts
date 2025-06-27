@@ -21,6 +21,8 @@ exports.createPages = async ({
               title
               date
               author
+              tags
+              description
             }
             internal {
               contentFilePath
@@ -51,6 +53,12 @@ exports.createPages = async ({
       component: `${BlogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id },
     });
+  });
+
+  createPage({
+    path: `/blog/`,
+    component: path.resolve('./src/templates/BlogPostIndex.tsx'),
+    context: { data: result.data?.allMdx.nodes },
   });
 
   // Create pages for Markdown files

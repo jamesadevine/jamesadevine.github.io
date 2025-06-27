@@ -1,6 +1,6 @@
 import { Box, Heading, NavLink, Flex } from "theme-ui";
 import type { FC } from "react";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -15,34 +15,63 @@ const Header: FC = () => {
         }
     `);
     const image = getImage(data.profile.childImageSharp.gatsbyImageData);
+    const [collapsed, setCollapsed] = useState(false);
+    const lastScrollY = useRef(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 80 && window.scrollY > lastScrollY.current) {
+                setCollapsed(true);
+            } else if (window.scrollY < lastScrollY.current || window.scrollY <= 80) {
+                setCollapsed(false);
+            }
+            lastScrollY.current = window.scrollY;
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <Box as="header" sx={{ bg: "primary", color: "background", py: 3, mb: 4 }}>
-            <Flex sx={{ flexDirection: "column", alignItems: "center" }}>
+        <Box as="header"
+            sx={{
+                bg: "primary",
+                color: "background",
+                py: collapsed ? 1 : 3,
+                mb: 4,
+                transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                boxShadow: collapsed ? "0 2px 8px rgba(0,0,0,0.08)" : undefined,
+                position: "sticky",
+                top: 0,
+                zIndex: 1000
+            }}
+        >
+            <Flex sx={{ flexDirection: "column", alignItems: "center", transition: "all 0.3s cubic-bezier(.4,0,.2,1)" }}>
                 {image && (
                     <GatsbyImage
                         image={image}
                         alt="James Devine profile"
                         style={{
-                            width: 96,
-                            height: 96,
+                            width: collapsed ? 48 : 96,
+                            height: collapsed ? 48 : 96,
                             borderRadius: "50%",
-                            marginBottom: 16,
+                            marginBottom: collapsed ? 8 : 16,
                             border: "3px solid",
-                            borderColor: "#fff"
+                            borderColor: "#fff",
+                            transition: "all 0.3s cubic-bezier(.4,0,.2,1)"
                         }}
                         imgStyle={{ borderRadius: "50%", objectFit: "cover" }}
                     />
                 )}
-                <Heading as="h2" sx={{ m: 0, textAlign: "center" }}>
+                <Heading as="h2" sx={{ m: 0, textAlign: "center", fontSize: collapsed ? 3 : 5, transition: "font-size 0.3s cubic-bezier(.4,0,.2,1)" }}>
                     James Devine
                 </Heading>
             </Flex>
             <Flex as="nav" sx={{ justifyContent: "center", gap: 3, mt: 2 }}>
                 <NavLink href="/" p={2} sx={{ color: "background", fontWeight: "bold" }}>
-                    Home
-                </NavLink>
-                <NavLink href="/about" p={2} sx={{ color: "background", fontWeight: "bold" }}>
                     About
+                </NavLink>
+                <NavLink href="/resume" p={2} sx={{ color: "background", fontWeight: "bold" }}>
+                    Resume
                 </NavLink>
                 <NavLink href="/blog" p={2} sx={{ color: "background", fontWeight: "bold" }}>
                     Blog

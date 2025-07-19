@@ -8,7 +8,7 @@ const GIT_SHA = GET_GIT_SHA() || "unknown";
 
 <footer>
 	&copy; {today.getFullYear()} James Devine. All rights reserved.
-	<div class="social-links">
+	<!-- <div class="social-links">
 		<a href="https://github.com/jamesadevine" target="_blank">
 			<span class="sr-only">Go to James Devine's GitHub repo</span>
 			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
@@ -18,7 +18,7 @@ const GIT_SHA = GET_GIT_SHA() || "unknown";
 				></path></svg
 			>
 		</a>
-	</div>
+	</div> -->
 	<div class="commit-sha">
 		<span class="sr-only">Current Git commit SHA</span>
 		<a href={`${GITHUB_REPO_URL}/commit/${GIT_SHA}`} target="_blank"

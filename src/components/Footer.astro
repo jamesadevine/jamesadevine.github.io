@@ -1,9 +1,8 @@
 ---
 import { GITHUB_REPO_URL } from "../consts";
-import { GET_GIT_SHA } from "../utils/gitSha";
 
 const today = new Date();
-const GIT_SHA = GET_GIT_SHA() || "unknown";
+const GIT_SHA = import.meta.env.__GIT_SHA__ || "unknown";
 ---
 
 <footer>

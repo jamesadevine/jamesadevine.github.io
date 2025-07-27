@@ -5,6 +5,13 @@ import Footer from "../components/Footer.astro";
 import Image from "astro/components/Image.astro";
 import profile from "../assets/profile.JPG";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import BlogPostList from "../components/BlogPostList.astro";
+
+const allPosts = await getCollection("blog");
+const recentPosts = allPosts
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 2);
 ---
 
 <!doctype html>
@@ -36,64 +43,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					thoughts on software development, technology, and life in
 					general.
 					<br /><br />
-					Feel free to explore my <a href="/blog">blog posts</a>,
-					check out my
+					Feel free to explore my <a href="/blog">posts</a>, check out
+					my
 					<a href="https://github.com/jamesdevine"
 						>projects on GitHub</a
 					>, or view my <a href="/cv">cv</a>!
 				</p>
 			</section>
-			<section class="about">
-				<h2>About Me</h2>
-				<p>
-					I hold a PhD in Computer Science and have a passion for
-					building systems that are efficient, accessible, and
-					user-friendly. My interests include electronics, embedded
-					systems, and accessibility. More recently I have turned my
-					focus towards AI and machine learning. I love sharing
-					knowledge and building things that help others.
-				</p>
-				<p>
-					In my past, I co-wrote the micro:bit runtime, a lightweight
-					operating system that for the <a
-						href="https://microbit.org/">BBC micro:bit</a
-					> that supports
-					<a href="https://makecode.microbit.org/"
-						>Microsoft MakeCode</a
-					> and Python. These technologies are used by millions of children
-					around the world to learn computer science concepts. More recently,
-					I created Jacdac, a flexible communication protocol for microcontrollers--think
-					USB but actually a bus and implementable on microcontrollers
-					that cost three US cents. With my research colleagues, Jacdac
-					was productised and released to the world. It is now integrated
-					into physical computing accessories sold by many manufacturers.
-				</p>
-				<p>
-					I now lead the <a
-						href="https://learn.microsoft.com/en-us/azure-sphere/product-overview/what-is-azure-sphere?view=azure-sphere-integrated"
-						>Azure Sphere OS and tooling team</a
-					>, an IoT platform that provides hardware protections and
-					secure connection to the cloud for connected devices.
-				</p>
-			</section>
-			<section class="recent-posts">
-				<h2>Recent Blog Posts</h2>
-				<!-- You can add a dynamic blog post list here later -->
-				<ul>
-					<li>
-						<a href="/blog/first-post">First Post</a>
-						<span class="date">(2025-07-01)</span>
-					</li>
-					<li>
-						<a href="/blog/second-post">Second Post</a>
-						<span class="date">(2025-07-10)</span>
-					</li>
-					<li>
-						<a href="/blog/third-post">Third Post</a>
-						<span class="date">(2025-07-15)</span>
-					</li>
-				</ul>
-			</section>
+			{
+				recentPosts.length > 0 && (
+					<section class="recent-posts">
+						<h2>Recent posts</h2>
+						<BlogPostList posts={recentPosts} />
+					</section>
+				)
+			}
 		</main>
 		<Footer />
 	</body>
@@ -160,7 +124,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		margin-top: 0.5rem;
 	}
 	.recent-posts {
-		max-width: 600px;
 		width: 100%;
 	}
 	.recent-posts ul {

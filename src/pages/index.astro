@@ -3,7 +3,8 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Image from "astro/components/Image.astro";
-import profile from "../assets/profile.JPG";
+import profile from "../assets/profile.jpg";
+import microbit_hello from "../assets/microbit-hello.gif";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
 import BlogPostList from "../components/BlogPostList.astro";
@@ -57,18 +58,22 @@ const recentPosts = allPosts
 					> that supports
 					<a href="https://makecode.microbit.org/"
 						>Microsoft MakeCode</a
-					> and Python. These technologies are used by millions of children
-					around the world to learn computer science concepts.
-					<b>FILL OUT</b>
+					> and Python. I later generalised the runtime as <a
+						href="https://github.com/lancaster-university/codal"
+						>CODAL</a
+					> to support other microcontrollers and programming language
+					platforms (e.g. Micropython). These technologies are used by
+					millions of children around the world to learn computer science
+					concepts.
 				</p>
 				<p>
 					More recently, I created <a href="https://aka.ms/jacdac"
 						>Jacdac</a
-					>, a flexible communication protocol for
-					microcontrollers--think USB but actually a bus and
-					implementable on microcontrollers that cost three US cents.
-					With my research colleagues, Jacdac was productised and
-					released to the world. It is now integrated into computing
+					>, a plug-and-play communication protocol for
+					microcontrollers - think USB but actually a bus <b>and</b>
+					implementable on microcontrollers that cost <b>just</b> three
+					US cents. With my research colleagues, Jacdac was productised
+					and released to the world. It is now integrated into computing
 					accessories sold by manufacturers around the world.
 				</p>
 				<p>

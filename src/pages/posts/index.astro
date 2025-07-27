@@ -30,7 +30,7 @@ const posts = allPosts.sort(
 	<body>
 		<Header />
 		<main>
-			<BlogPostList posts={posts} />
+			{posts && posts.length > 0 && <BlogPostList posts={posts} />}
 		</main>
 		<Footer />
 	</body>

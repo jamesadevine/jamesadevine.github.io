@@ -1,0 +1,203 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Image from "astro/components/Image.astro";
+import profile from "../assets/profile.jpg";
+import microbit_hello from "../assets/microbit-hello.gif";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import BlogPostList from "../components/BlogPostList.astro";
+
+const allPosts = await getCollection("blog");
+const recentPosts = allPosts
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 2);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="hero-main">
+			<section class="hero">
+				<div class="hero-row">
+					<div class="hero-img">
+						<Image
+							src={profile}
+							alt="James Devine's profile picture"
+							width="150"
+							height="150"
+							class="profile-img"
+						/>
+					</div>
+					<div class="hero-content center-align">
+						<h1>James Devine</h1>
+						<p class="tagline">Researcher and systems specialist</p>
+					</div>
+				</div>
+			</section>
+			<section class="about">
+				<p>
+					I hold a <a
+						href="https://www.research.lancs.ac.uk/portal/en/publications/enabling-intuitive-and-efficient-physical-computing(57d08e7e-a744-4788-8b57-f15260a21dc6).html"
+						>PhD in Computer Science</a
+					> and have a passion for building systems that are efficient,
+					accessible, and user-friendly. My interests include electronics,
+					embedded systems, and accessibility. More recently I have turned
+					my focus towards AI and machine learning. I love sharing knowledge
+					and building things that help others.
+				</p>
+				<p>
+					In my past, I co-wrote the micro:bit runtime, a lightweight
+					operating system that for the <a
+						href="https://microbit.org/">BBC micro:bit</a
+					> that supports
+					<a href="https://makecode.microbit.org/"
+						>Microsoft MakeCode</a
+					> and Python. I later generalised the runtime as <a
+						href="https://github.com/lancaster-university/codal"
+						>CODAL</a
+					> to support other microcontrollers and programming language
+					platforms (e.g. Micropython). These technologies are used by
+					millions of children around the world to learn computer science
+					concepts.
+				</p>
+				<p>
+					More recently, I created <a href="https://aka.ms/jacdac"
+						>Jacdac</a
+					>, a plug-and-play communication protocol for
+					microcontrollers - think USB but actually a bus and
+					implementable on microcontrollers that cost <i>just</i> three
+					US cents. With my research colleagues, Jacdac was productised
+					and released to the world. It is now integrated into computing
+					accessories sold by manufacturers around the world.
+				</p>
+				<p>
+					I now lead the <a
+						href="https://learn.microsoft.com/en-us/azure-sphere/product-overview/what-is-azure-sphere?view=azure-sphere-integrated"
+						>Azure Sphere</a
+					> OS and tooling team, an IoT platform that provides hardware
+					protections and secure connection to the cloud for connected
+					device scenarios.
+				</p>
+			</section>
+			{
+				recentPosts.length > 0 && (
+					<section class="recent-posts">
+						<h2>Recent posts</h2>
+						<BlogPostList posts={recentPosts} />
+					</section>
+				)
+			}
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.hero-main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.5rem;
+		background: var(--accent-bg, #f5f5fa);
+		padding: 2rem 2.5rem;
+		width: 100%;
+		border-radius: 1.5rem;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+	}
+	.hero-row {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		justify-content: flex-start;
+	}
+	.hero-img {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+		flex-shrink: 0;
+	}
+	.hero-img img,
+	.hero-img picture img {
+		border-radius: 50%;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		border: 3px solid var(--gray-light, #6c63ff);
+	}
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		text-align: center;
+	}
+	.hero-content h1 {
+		font-size: 2.2em;
+		margin: 0;
+	}
+	.tagline {
+		font-size: 1.3em;
+		color: var(--gray, #6c63ff);
+		margin: 0.2em 0 0 0;
+		font-weight: 500;
+	}
+	.hero-social {
+		display: flex;
+		gap: 1rem;
+		margin-top: 0.5rem;
+	}
+	.recent-posts {
+		width: 100%;
+	}
+	.recent-posts ul {
+		list-style: none;
+		padding: 0;
+	}
+	.recent-posts li {
+		margin-bottom: 0.5rem;
+		font-size: 1.05em;
+	}
+	.recent-posts .date {
+		color: #888;
+		font-size: 0.95em;
+		margin-left: 0.5em;
+	}
+	.greeting {
+		font-size: 1.2em;
+	}
+	.profile-img {
+		border-radius: 50%;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		border: 3px solid var(--accent, #6c63ff);
+	}
+	.about h2 {
+		text-align: center;
+	}
+	.intro-text {
+		margin-top: 1em;
+		font-size: 1.08em;
+		color: #222;
+		max-width: 32em;
+		text-align: center;
+	}
+	@media (max-width: 720px) {
+		.hero-row {
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+		}
+	}
+</style>

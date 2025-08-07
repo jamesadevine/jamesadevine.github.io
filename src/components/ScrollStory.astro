@@ -1,0 +1,554 @@
+---
+// ScrollStory.astro - Interactive scrolling story component
+
+export interface StoryPanel {
+    content?: string;
+    backgroundColor: string;
+    backgroundColorEnd?: string;
+    textColor?: string;
+    textColorEnd?: string;
+    showScrollIndicator?: boolean;
+}
+
+interface Props {
+    panels: StoryPanel[];
+}
+
+const { panels }: Props = Astro.props;
+---
+
+<div class="scroll-story">
+    {
+        panels.map((panel, index) => (
+            <section
+                class="story-panel"
+                data-bg={panel.backgroundColor}
+                data-bg-end={panel.backgroundColorEnd}
+                data-text-color={panel.textColor}
+                data-text-color-end={panel.textColorEnd}
+                data-panel-index={index}
+            >
+                <div class="story-content">
+                    {panel.content && <h1>{panel.content}</h1>}
+                    {panel.showScrollIndicator && (
+                        <div class="scroll-indicator">
+                            <span>Scroll to continue</span>
+                            <div class="caret">↓</div>
+                        </div>
+                    )}
+                </div>
+            </section>
+        ))
+    }
+</div>
+
+<style>
+    .scroll-story {
+        position: relative;
+        z-index: 1;
+    }
+
+    .story-panel {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        /* Ensure smooth transitions */
+        transition:
+            background-color 0.1s ease-out,
+            color 0.1s ease-out;
+    }
+
+    .story-content {
+        text-align: center;
+        max-width: 800px;
+        padding: 2rem;
+    }
+
+    .story-content h1 {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: bold;
+        line-height: 1.2;
+        margin: 0;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        opacity: 0.7;
+        animation: pulse 2s infinite;
+    }
+
+    .scroll-indicator span {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .caret {
+        font-size: 1.5rem;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            opacity: 0.7;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-5px);
+        }
+        60% {
+            transform: translateY(-3px);
+        }
+    }
+
+    /* Smooth scrolling behavior */
+    :global(html) {
+        scroll-behavior: smooth;
+    }
+
+    /* Smooth background transitions */
+    :global(main) {
+        transition: background-color 0.1s ease-out;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .story-content {
+            padding: 1rem;
+        }
+
+        .story-content h1 {
+            font-size: clamp(2rem, 10vw, 4rem);
+        }
+
+        .scroll-indicator {
+            bottom: 1rem;
+        }
+    }
+</style>
+
+<script>
+    // Enhanced scroll effects and animations
+    function initScrollStory() {
+        const panels = document.querySelectorAll(
+            ".story-panel",
+        ) as NodeListOf<HTMLElement>;
+        const mainElement = document.querySelector("main") as HTMLElement;
+
+        // Track the current state to avoid unnecessary updates
+        let currentBackgroundColor = "";
+        let currentTextColor = "";
+
+        // Apply initial colors to all panels immediately
+        panels.forEach((panel) => {
+            const textColor = panel.dataset.textColor;
+
+            // Set initial text color on the panel
+            if (textColor && textColor !== "normal") {
+                panel.style.color = textColor;
+            }
+        });
+
+        // Apply the first panel's background to main element immediately
+        if (panels.length > 0) {
+            const firstPanel = panels[0];
+            applySolidColors(
+                firstPanel.dataset.bg,
+                firstPanel.dataset.textColor,
+            );
+            // Initialize current state
+            currentBackgroundColor = firstPanel.dataset.bg || "";
+            currentTextColor = firstPanel.dataset.textColor || "";
+        }
+
+        function updateBackground() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // Find the current panel and calculate transition
+            for (let i = 0; i < panels.length; i++) {
+                const panel = panels[i];
+                const panelTop = panel.offsetTop;
+                const panelBottom = panelTop + panel.offsetHeight;
+                const viewportTop = scrollY;
+                const viewportBottom = scrollY + windowHeight;
+
+                // Check if viewport is within or overlapping this panel
+                if (viewportTop < panelBottom && viewportBottom > panelTop) {
+                    const bgColor = panel.dataset.bg;
+                    const bgColorEnd = panel.dataset.bgEnd;
+                    const textColor = panel.dataset.textColor;
+                    const textColorEnd = panel.dataset.textColorEnd;
+
+                    // Calculate scroll progress through this panel
+                    const panelProgress = Math.max(
+                        0,
+                        Math.min(
+                            1,
+                            (viewportTop - panelTop + windowHeight / 2) /
+                                panel.offsetHeight,
+                        ),
+                    );
+
+                    // Check if we need to transition to next panel
+                    const nextPanel = panels[i + 1];
+                    if (nextPanel && panelProgress > 0.5) {
+                        // We're in the second half of current panel, start transitioning
+                        const transitionProgress = (panelProgress - 0.5) * 2; // 0 to 1
+                        const nextBgColor = nextPanel.dataset.bg;
+                        const nextTextColor = nextPanel.dataset.textColor;
+
+                        // Apply transition between colors
+                        applyTransitionColors(
+                            bgColor,
+                            nextBgColor,
+                            textColor,
+                            nextTextColor,
+                            transitionProgress,
+                        );
+                    } else {
+                        // We're in the first half, apply gradual transition within this panel if end colors are specified
+                        if (bgColorEnd || textColorEnd) {
+                            applyInternalTransition(
+                                bgColor,
+                                bgColorEnd,
+                                textColor,
+                                textColorEnd,
+                                panelProgress,
+                            );
+                        } else {
+                            // Use solid colors - check if we need to update
+                            const targetBgColor = bgColor || "";
+                            const targetTextColor = textColor || "";
+
+                            if (
+                                currentBackgroundColor !== targetBgColor ||
+                                currentTextColor !== targetTextColor
+                            ) {
+                                applySolidColors(bgColor, textColor);
+                                currentBackgroundColor = targetBgColor;
+                                currentTextColor = targetTextColor;
+                            }
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        function applySolidColor(bgColor: string | undefined) {
+            if (!mainElement) return;
+
+            switch (bgColor) {
+                case "white":
+                    mainElement.style.backgroundColor = "white";
+                    break;
+                case "black":
+                    mainElement.style.backgroundColor = "black";
+                    break;
+                case "normal":
+                    mainElement.style.backgroundColor = "";
+                    break;
+                default:
+                    // Handle custom color values (hex, rgb, etc.)
+                    if (
+                        bgColor &&
+                        (bgColor.startsWith("#") ||
+                            bgColor.startsWith("rgb") ||
+                            bgColor.startsWith("hsl"))
+                    ) {
+                        mainElement.style.backgroundColor = bgColor;
+                    } else {
+                        mainElement.style.backgroundColor = "";
+                    }
+                    break;
+            }
+        }
+
+        function applySolidColors(
+            bgColor: string | undefined,
+            textColor: string | undefined,
+        ) {
+            const targetBgColor = bgColor || "";
+            const targetTextColor = textColor || "";
+
+            // Only update if colors have changed
+            if (currentBackgroundColor !== targetBgColor) {
+                applySolidColor(bgColor);
+                currentBackgroundColor = targetBgColor;
+            }
+
+            // Apply text color to the main element to affect all content
+            if (mainElement && currentTextColor !== targetTextColor) {
+                if (textColor && textColor !== "normal") {
+                    mainElement.style.color = textColor;
+                } else {
+                    mainElement.style.color = "";
+                }
+                currentTextColor = targetTextColor;
+            }
+        }
+
+        function applyInternalTransition(
+            bgColorStart: string | undefined,
+            bgColorEnd: string | undefined,
+            textColorStart: string | undefined,
+            textColorEnd: string | undefined,
+            progress: number,
+        ) {
+            if (!mainElement) return;
+
+            let targetBgColor = "";
+            let targetTextColor = "";
+
+            // Apply background color transition
+            if (bgColorEnd) {
+                const bgFrom = parseColor(bgColorStart || "normal");
+                const bgTo = parseColor(bgColorEnd);
+                const r = Math.round(bgFrom.r + (bgTo.r - bgFrom.r) * progress);
+                const g = Math.round(bgFrom.g + (bgTo.g - bgFrom.g) * progress);
+                const b = Math.round(bgFrom.b + (bgTo.b - bgFrom.b) * progress);
+                targetBgColor = `rgb(${r}, ${g}, ${b})`;
+
+                if (currentBackgroundColor !== targetBgColor) {
+                    mainElement.style.backgroundColor = targetBgColor;
+                    currentBackgroundColor = targetBgColor;
+                }
+            } else {
+                targetBgColor = bgColorStart || "";
+                if (currentBackgroundColor !== targetBgColor) {
+                    applySolidColor(bgColorStart);
+                    currentBackgroundColor = targetBgColor;
+                }
+            }
+
+            // Apply text color transition
+            if (textColorEnd) {
+                const textFrom = parseColor(textColorStart || "black");
+                const textTo = parseColor(textColorEnd);
+                const r = Math.round(
+                    textFrom.r + (textTo.r - textFrom.r) * progress,
+                );
+                const g = Math.round(
+                    textFrom.g + (textTo.g - textFrom.g) * progress,
+                );
+                const b = Math.round(
+                    textFrom.b + (textTo.b - textFrom.b) * progress,
+                );
+                targetTextColor = `rgb(${r}, ${g}, ${b})`;
+
+                if (currentTextColor !== targetTextColor && mainElement) {
+                    mainElement.style.color = targetTextColor;
+                    currentTextColor = targetTextColor;
+                }
+            } else if (textColorStart) {
+                targetTextColor =
+                    textColorStart === "normal" ? "" : textColorStart;
+                if (currentTextColor !== targetTextColor && mainElement) {
+                    mainElement.style.color = targetTextColor;
+                    currentTextColor = targetTextColor;
+                }
+            }
+        }
+
+        function applyTransitionColors(
+            fromBgColor: string | undefined,
+            toBgColor: string | undefined,
+            fromTextColor: string | undefined,
+            toTextColor: string | undefined,
+            progress: number,
+        ) {
+            if (!mainElement) return;
+
+            // Background color transition
+            const bgFrom = parseColor(fromBgColor || "normal");
+            const bgTo = parseColor(toBgColor || "normal");
+            const bgR = Math.round(bgFrom.r + (bgTo.r - bgFrom.r) * progress);
+            const bgG = Math.round(bgFrom.g + (bgTo.g - bgFrom.g) * progress);
+            const bgB = Math.round(bgFrom.b + (bgTo.b - bgFrom.b) * progress);
+            const targetBgColor = `rgb(${bgR}, ${bgG}, ${bgB})`;
+
+            if (currentBackgroundColor !== targetBgColor) {
+                mainElement.style.backgroundColor = targetBgColor;
+                currentBackgroundColor = targetBgColor;
+            }
+
+            // Text color transition
+            if (fromTextColor || toTextColor) {
+                const textFrom = parseColor(fromTextColor || "black");
+                const textTo = parseColor(toTextColor || "black");
+                const textR = Math.round(
+                    textFrom.r + (textTo.r - textFrom.r) * progress,
+                );
+                const textG = Math.round(
+                    textFrom.g + (textTo.g - textFrom.g) * progress,
+                );
+                const textB = Math.round(
+                    textFrom.b + (textTo.b - textFrom.b) * progress,
+                );
+                const targetTextColor = `rgb(${textR}, ${textG}, ${textB})`;
+
+                if (currentTextColor !== targetTextColor) {
+                    mainElement.style.color = targetTextColor;
+                    currentTextColor = targetTextColor;
+                }
+            }
+        }
+
+        // Helper function to parse color strings
+        function parseColor(color: string): {
+            r: number;
+            g: number;
+            b: number;
+        } {
+            // Define color values - expanded to handle more colors
+            const colors: {
+                [key: string]: { r: number; g: number; b: number };
+            } = {
+                white: { r: 255, g: 255, b: 255 },
+                black: { r: 0, g: 0, b: 0 },
+                normal: { r: 248, g: 250, b: 252 }, // Assuming a light gray default
+            };
+
+            if (colors[color]) {
+                return colors[color];
+            }
+
+            // Try to parse hex colors
+            if (color.startsWith("#")) {
+                const hex = color.slice(1);
+                if (hex.length === 6) {
+                    return {
+                        r: parseInt(hex.slice(0, 2), 16),
+                        g: parseInt(hex.slice(2, 4), 16),
+                        b: parseInt(hex.slice(4, 6), 16),
+                    };
+                }
+            }
+
+            // Try to parse rgb colors
+            const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+            if (rgbMatch) {
+                return {
+                    r: parseInt(rgbMatch[1]),
+                    g: parseInt(rgbMatch[2]),
+                    b: parseInt(rgbMatch[3]),
+                };
+            }
+
+            // Fallback to normal color
+            return colors.normal;
+        }
+
+        // Intersection Observer for better performance
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const panel = entry.target as HTMLElement;
+                        const content = panel.querySelector(
+                            ".story-content h1",
+                        ) as HTMLElement;
+                        if (content) {
+                            content.style.animationPlayState = "running";
+                        }
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+            },
+        );
+
+        panels.forEach((panel) => {
+            observer.observe(panel);
+        });
+
+        // Throttled scroll listener
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateBackground);
+                ticking = true;
+                setTimeout(() => (ticking = false), 16); // ~60fps
+            }
+        }
+
+        window.addEventListener("scroll", requestTick);
+
+        // Initial call
+        updateBackground();
+
+        // Clean up background when leaving the story section
+        const storySection = document.querySelector(
+            ".scroll-story",
+        ) as HTMLElement;
+        const storyObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) {
+                        // Reset background when story is out of view
+                        const rect = entry.boundingClientRect;
+                        if (rect.bottom < 0) {
+                            // Story has been scrolled past
+                            if (mainElement) {
+                                mainElement.style.backgroundColor = "";
+                                mainElement.style.color = "";
+                                // Reset tracked state
+                                currentBackgroundColor = "";
+                                currentTextColor = "";
+                            }
+                        }
+                    }
+                });
+            },
+            {
+                threshold: 0,
+            },
+        );
+
+        if (storySection) {
+            storyObserver.observe(storySection);
+        }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollStory);
+    } else {
+        initScrollStory();
+    }
+</script>

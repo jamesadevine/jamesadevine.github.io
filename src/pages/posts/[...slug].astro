@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "../../layouts/BlogPost.astro";
-import InteractiveBlogPost from "../../layouts/InteractiveBlogPost.astro";
+import ScrollStoryBlogPost from "../../layouts/ScrollStoryBlogPost.astro";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -18,14 +18,14 @@ const { Content } = await render(post);
 ---
 
 {
-	post.data.interactive && (
-		<InteractiveBlogPost {...post.data}>
+	post.data.scrollStory && (
+		<ScrollStoryBlogPost {...post.data}>
 			<Content />
-		</InteractiveBlogPost>
+		</ScrollStoryBlogPost>
 	)
 }
 {
-	!post.data.interactive && (
+	!post.data.scrollStory && (
 		<BlogPost {...post.data}>
 			<Content />
 		</BlogPost>

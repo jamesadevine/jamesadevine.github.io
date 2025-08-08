@@ -5,11 +5,19 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
+import ScrollStory from "../components/ScrollStory.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, interactive } =
-    Astro.props;
+const {
+    title,
+    description,
+    pubDate,
+    updatedDate,
+    heroImage,
+    scrollStory,
+    scrollStoryPanels,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -17,9 +25,10 @@ const { title, description, pubDate, updatedDate, heroImage, interactive } =
         <BaseHead title={title} description={description} />
         <style>
             main {
-                width: calc(100% - 2em);
+                width: 100%;
                 max-width: 100%;
                 margin: 0;
+                padding: 0;
                 transition: background-color 0.3s ease;
             }
             .hero-image {
@@ -59,8 +68,36 @@ const { title, description, pubDate, updatedDate, heroImage, interactive } =
     <body>
         <Header />
         <main>
+            <ScrollStory panels={scrollStoryPanels} />
             <article>
+                <div class="hero-image">
+                    {
+                        heroImage && (
+                            <Image
+                                width={1020}
+                                height={510}
+                                src={heroImage}
+                                alt=""
+                            />
+                        )
+                    }
+                </div>
                 <div class="prose">
+                    <div class="title">
+                        <div class="date">
+                            <FormattedDate date={pubDate} />
+                            {
+                                updatedDate && (
+                                    <div class="last-updated-on">
+                                        Last updated on{" "}
+                                        <FormattedDate date={updatedDate} />
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <h1>{title}</h1>
+                        <hr />
+                    </div>
                     <slot />
                 </div>
             </article>

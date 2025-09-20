@@ -42,7 +42,25 @@ import Publication from "../layouts/Publication.astro";
     </head>
     <body>
         <Header />
-        <Publication publications={patentsByYear} />
+        <main>
+            <h1>Patents</h1>
+            <Publication publications={patentsByYear} />
+        </main>
         <Footer />
     </body>
 </html>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    @media (max-width: 720px) {
+        main {
+            width: 100%;
+        }
+    }
+</style>

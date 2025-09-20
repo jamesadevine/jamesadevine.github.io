@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+type Publications = CollectionEntry<"publications">["data"];
+
+let publications = await getCollection("publications");
+
+let mappedPublications = publications.map(
+    (entry: CollectionEntry<"publications">) => entry.data,
+);
+
+// group publications by year, most recent first
+mappedPublications = mappedPublications.sort((a, b) => {
+    return (a.year || 0) - (b.year || 0);
+});
+
+let papers = mappedPublications.filter((pub) => pub.pub_type === "paper");
+
+const papersByYear = papers.reduce(
+    (acc, pub) => {
+        const year = pub.year || "Unknown";
+        if (!acc[year]) {
+            acc[year] = [];
+        }
+        acc[year].push(pub);
+        return acc;
+    },
+    {} as Record<string, Publications[]>,
+);
+
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Publication from "../layouts/Publication.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <main>
+            <h1>Publications</h1>
+            <Publication publications={papersByYear} />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    @media (max-width: 720px) {
+        main {
+            width: 100%;
+        }
+    }
+</style>

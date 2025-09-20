@@ -1,4 +1,4 @@
-import { glob } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
 
 const blog = defineCollection({
@@ -15,4 +15,22 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+// Publications collection using file loader for JSON data
+const publications = defineCollection({
+	loader: file("./public/publications.json"),
+	schema: z.object({
+		pub_type: z.enum(["paper", "patent"]),
+		accolades: z.enum(["none", "best_paper", "honorable_mention", "distinguished_paper"]),
+		title: z.string(),
+		authors: z.array(z.string()),
+		year: z.number(),
+		venue: z.string().optional(),
+		abstract: z.string().optional(),
+		doi: z.string().optional(),
+		key: z.string(),
+		type: z.enum(['journal', 'conference', 'workshop', 'thesis', 'book', 'preprint']).default('journal'),
+	}),
+});
+
+
+export const collections = { blog, publications };

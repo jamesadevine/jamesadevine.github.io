@@ -1,0 +1,510 @@
+[
+  {
+    "id": 0,
+    "key": "devine2018makecode",
+    "type": "journal",
+    "title": "MakeCode and CODAL: intuitive and efficient embedded systems programming for education",
+    "authors": [
+      "Devine, James",
+      "Finney, Joe",
+      "De Halleux, Peli",
+      "Moskal, Micha\\l",
+      "Ball, Thomas",
+      "Hodges, Steve"
+    ],
+    "year": 2018,
+    "venue": "ACM SIGPLAN Notices",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 1,
+    "key": "seyed2019makerarcade",
+    "type": "conference",
+    "title": "MakerArcade: using gaming and physical computing for playful making, learning, and creativity",
+    "authors": [
+      "Seyed, Teddy",
+      "de Halleux, Peli",
+      "Moskal, Michal",
+      "Devine, James",
+      "Finney, Joe",
+      "Hodges, Steve",
+      "Ball, Thomas"
+    ],
+    "year": 2019,
+    "venue": "Extended Abstracts of the 2019 CHI Conference on Human Factors in Computing Systems",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 2,
+    "key": "knowles2018children",
+    "type": "conference",
+    "title": "What children's imagined uses of the BBC micro: bit tells us about designing for their IoT privacy, security and safety",
+    "authors": [
+      "Knowles, Bran",
+      "Finney, Joe",
+      "Beck, Sophie",
+      "Devine, James"
+    ],
+    "year": 2018,
+    "venue": "Living in the Internet of Things: Cybersecurity of the IoT-2018",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 3,
+    "key": "austin2020bbc",
+    "type": "journal",
+    "title": "The BBC micro: bit: from the UK to the world",
+    "authors": [
+      "Austin, Jonny",
+      "Baker, Howard",
+      "Ball, Thomas",
+      "Devine, James",
+      "Finney, Joe",
+      "De Halleux, Peli",
+      "Hodges, Steve",
+      "Moskal, Micha\\l",
+      "Stockdale, Gareth"
+    ],
+    "year": 2020,
+    "venue": "Communications of the ACM",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 4,
+    "key": "new2019energy",
+    "type": "conference",
+    "title": "Energy in schools: Promoting global change through socio technical deployments",
+    "authors": [
+      "New, Kathy",
+      "Devine, James",
+      "Woodcock, Taylor",
+      "Beck, Sophie",
+      "Finney, Joe",
+      "Hazas, Mike",
+      "Banks, Nick",
+      "Smith, Karen",
+      "Bailey, Tim"
+    ],
+    "year": 2019,
+    "venue": "Living in the Internet of Things (IoT 2019)",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 5,
+    "key": "knowles2019scenario",
+    "type": "conference",
+    "title": "A scenario-based methodology for exploring risks: children and programmable IoT",
+    "authors": [
+      "Knowles, Bran",
+      "Beck, Sophie",
+      "Finney, Joe",
+      "Devine, James",
+      "Lindley, Joseph"
+    ],
+    "year": 2019,
+    "venue": "Proceedings of the 2019 on designing interactive systems conference",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 6,
+    "key": "knowles2019iot4kids",
+    "type": "conference",
+    "title": "IoT4Kids: Strategies for Mitigating Against Risks of IoT for Children",
+    "authors": [
+      "Knowles, BH",
+      "Beck, S",
+      "Newmarch, G",
+      "Finney, J",
+      "Devine, J"
+    ],
+    "year": 2019,
+    "venue": "CHI Conference on Human Factors in Computing Systems",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 7,
+    "key": "butterworth2015presenting",
+    "type": "conference",
+    "title": "Presenting the past: a case study of innovation opportunities for knowledge dissemination to the general public through pervasive technology",
+    "authors": [
+      "Butterworth, Christian",
+      "Kershaw, Daniel",
+      "Devine, James",
+      "Gallagher, James",
+      "Croft, Jack"
+    ],
+    "year": 2015,
+    "venue": "21st Annual Meeting of the European Association of Archaeologists",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 8,
+    "key": "devine2020enabling",
+    "type": "thesis",
+    "title": "Enabling intuitive and efficient physical computing",
+    "authors": [
+      "Devine, James"
+    ],
+    "year": 2020,
+    "venue": "",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 9,
+    "key": "seyed2021rethinking",
+    "type": "conference",
+    "title": "Rethinking the runway: Using avant-garde fashion to design a system for wearables",
+    "authors": [
+      "Seyed, Teddy",
+      "Devine, James",
+      "Finney, Joe",
+      "Moskal, Michal",
+      "de Halleux, Peli",
+      "Hodges, Steve",
+      "Ball, Thomas",
+      "Roseway, Asta"
+    ],
+    "year": 2021,
+    "venue": "Proceedings of the 2021 CHI conference on human factors in computing systems",
+    "pub_type": "paper",
+    "accolades": "honorable_mention"
+  },
+  {
+    "id": 10,
+    "key": "potluri2021multisensory",
+    "type": "conference",
+    "title": "Multisensory physical computing for the blind and visually impaired",
+    "authors": [
+      "Potluri, Venkatesh",
+      "Manloff, Jennifer",
+      "Devine, James",
+      "Hodges, Steve"
+    ],
+    "year": 2021,
+    "venue": "CHI Workshop-Rethinking the Senses: A Workshop on Multisensory Embodied Experiences and Disability Interactions",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 11,
+    "key": "lambrichts2021survey",
+    "type": "journal",
+    "title": "A survey and taxonomy of electronics toolkits for interactive and ubiquitous device prototyping",
+    "authors": [
+      "Lambrichts, Mannu",
+      "Ramakers, Raf",
+      "Hodges, Steve",
+      "Coppers, Sven",
+      "Devine, James"
+    ],
+    "year": 2021,
+    "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 12,
+    "key": "moskal2021web",
+    "type": "conference",
+    "title": "Web-based Programming for Low-cost Gaming Handhelds",
+    "authors": [
+      "Moskal, Michal",
+      "Ball, Thomas",
+      "Chatra, Abhijith",
+      "Devine, James",
+      "de Halleux, Peli",
+      "Hodges, Steve",
+      "Kao, Shannon",
+      "Knoll, Richard",
+      "Nickel, Galen",
+      "Russell, Jacqueline",
+      "others"
+    ],
+    "year": 2021,
+    "venue": "Proceedings of the 16th International Conference on the Foundations of Digital Games",
+    "pub_type": "paper",
+    "accolades": "best_paper"
+  },
+  {
+    "id": 13,
+    "key": "wentzel2022understanding",
+    "type": "conference",
+    "title": "Understanding how people with limited mobility use multi-modal input",
+    "authors": [
+      "Wentzel, Johann",
+      "Junuzovic, Sasa",
+      "Devine, James",
+      "Porter, John",
+      "Mott, Martez"
+    ],
+    "year": 2022,
+    "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 14,
+    "key": "devine2022plug",
+    "type": "journal",
+    "title": "Plug-and-play physical computing with Jacdac",
+    "authors": [
+      "Devine, James",
+      "Moskal, Michal",
+      "De Halleux, Peli",
+      "Ball, Thomas",
+      "Hodges, Steve",
+      "D'Amone, Gabriele",
+      "Gakure, David",
+      "Finney, Joe",
+      "Underwood, Lorraine",
+      "Hartley, Kobi",
+      "others"
+    ],
+    "year": 2022,
+    "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+    "pub_type": "paper",
+    "accolades": "distinguished_paper"
+  },
+  {
+    "id": 15,
+    "key": "potluri2022psst",
+    "type": "conference",
+    "title": "Psst: Enabling blind or visually impaired developers to author sonifications of streaming sensor data",
+    "authors": [
+      "Potluri, Venkatesh",
+      "Thompson, John",
+      "Devine, James",
+      "Lee, Bongshin",
+      "Morsi, Nora",
+      "De Halleux, Peli",
+      "Hodges, Steve",
+      "Mankoff, Jennifer"
+    ],
+    "year": 2022,
+    "venue": "Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 16,
+    "key": "hartley2023makedevice",
+    "type": "conference",
+    "title": "MakeDevice: Evolving devices beyond the prototype with Jacdac",
+    "authors": [
+      "Hartley, Kobi",
+      "Finney, Joe",
+      "Hodges, Steve",
+      "De Halleux, Peli",
+      "Devine, James",
+      "D'Amone, Gabriele"
+    ],
+    "year": 2023,
+    "venue": "Proceedings of the Seventeenth International Conference on Tangible, Embedded, and Embodied Interaction",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 17,
+    "key": "lambrichts2023circuitglue",
+    "type": "journal",
+    "title": "CircuitGlue: A Software Configurable Converter for Interconnecting Multiple Heterogeneous Electronic Components",
+    "authors": [
+      "Lambrichts, Mannu",
+      "Ramakers, Raf",
+      "Hodges, Steve",
+      "Devine, James",
+      "Underwood, Lorraine",
+      "Finney, Joe"
+    ],
+    "year": 2023,
+    "venue": "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 18,
+    "key": "helmes2024computer",
+    "type": "preprint",
+    "title": "Computer mouse module",
+    "authors": [
+      "Helmes, John Franciscus Marie",
+      "Paul, KOS",
+      "Chen, Nicholas Yen-Cherng",
+      "Hall, Michael",
+      "Hodges, Stephen Edward",
+      "DEVINE, James Alexander",
+      "Feng, Qing",
+      "Fukumoto, Masaaki"
+    ],
+    "year": 2024,
+    "venue": "",
+    "pub_type": "patent",
+    "accolades": "none"
+  },
+  {
+    "id": 19,
+    "key": "hodges2023electronic",
+    "type": "preprint",
+    "title": "Electronic Prototyping",
+    "authors": [
+      "Hodges, Stephen Edward",
+      "Moskal, Michal J",
+      "D'AMONE, Gabriel",
+      "DEVINE, James Alexander",
+      "BALL, Thomas Jaudon",
+      "de Halleux, Jonathan Paul"
+    ],
+    "year": 2023,
+    "venue": "",
+    "pub_type": "patent",
+    "accolades": "none"
+  },
+  {
+    "id": 20,
+    "key": "hodges2025electronicinteroperability",
+    "type": "preprint",
+    "title": "Electronic prototyping interoperability",
+    "authors": [
+      "Hodges, Stephen Edward",
+      "Moskal, Michal J",
+      "D'AMONE, Gabriele",
+      "DEVINE, James Alexander",
+      "de Halleux, Jonathan Paul",
+      "BALL, Thomas Jaudon"
+    ],
+    "year": 2025,
+    "venue": "",
+    "pub_type": "patent",
+    "accolades": "none"
+  },
+  {
+    "id": 21,
+    "key": "hodges2025electronic",
+    "type": "preprint",
+    "title": "Electronic prototyping",
+    "authors": [
+      "Hodges, Stephen Edward",
+      "Moskal, Michal J",
+      "D'AMONE, Gabriele",
+      "DEVINE, James Alexander",
+      "de Halleux, Jonathan Paul",
+      "BALL, Thomas Jaudon"
+    ],
+    "year": 2025,
+    "venue": "",
+    "pub_type": "patent",
+    "accolades": "none"
+  },
+  {
+    "id": 22,
+    "key": "ball2024jacdac",
+    "type": "journal",
+    "title": "Jacdac: Service-based prototyping of embedded systems",
+    "authors": [
+      "Ball, Thomas",
+      "De Halleux, Peli",
+      "Devine, James",
+      "Hodges, Steve",
+      "Moskal, Micha\\l"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the ACM on Programming Languages",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 23,
+    "key": "hartley2024meet",
+    "type": "conference",
+    "title": "Meet MicroCode: a Live and Portable Programming Tool for the BBC micro: bit",
+    "authors": [
+      "Hartley, Kobi",
+      "Rubegni, Elisa",
+      "Underwood, Lorraine",
+      "Finney, Joe",
+      "Ball, Thomas",
+      "Hodges, Steve",
+      "De Halleux, Peli",
+      "Devine, James",
+      "Anderson, Eric",
+      "Moskal, Micha\\l"
+    ],
+    "year": 2024,
+    "venue": "Proceedings of the 23rd Annual ACM Interaction Design and Children Conference",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 24,
+    "key": "devine2024plug",
+    "type": "journal",
+    "title": "Plug-and-Play Physical Computing and Device Prototyping with Jacdac",
+    "authors": [
+      "Devine, James",
+      "Hodges, Steve",
+      "Ball, Thomas",
+      "Moskal, Micha\\l",
+      "de Halleux, Peli",
+      "D'Amone, Gabriele",
+      "Gakure, David",
+      "Finney, Joe",
+      "Underwood, Lorraine",
+      "Hartley, Kobi",
+      "others"
+    ],
+    "year": 2024,
+    "venue": "GetMobile: Mobile Computing and Communications",
+    "pub_type": "paper",
+    "accolades": "none"
+  },
+  {
+    "id": 25,
+    "key": "hodges2024modular",
+    "type": "preprint",
+    "title": "Modular electronic prototyping platforms",
+    "authors": [
+      "Hodges, Stephen Edward",
+      "Moskal, Michal J",
+      "D'AMONE, Gabriele",
+      "DEVINE, James Alexander",
+      "BALL, Thomas Jaudon",
+      "de Halleux, Jonathan Paul"
+    ],
+    "year": 2024,
+    "venue": "",
+    "pub_type": "patent",
+    "accolades": "none"
+  },
+  {
+    "id": 26,
+    "key": "davis2021challenges",
+    "type": "conference",
+    "title": "Challenges to Inclusive and Accessible Prototyping, Isotyping and Production",
+    "authors": [
+      "Davis, Josh Urban",
+      "Devine, James",
+      "Ellis, K",
+      "Fleet, C",
+      "Fogarty, J",
+      "Follmer, S",
+      "Gotfrid, T",
+      "Hodges, S",
+      "Hofmann, M",
+      "Kushalnagar, R",
+      "others"
+    ],
+    "year": 2021,
+    "venue": "Accessible Computer Science Education Fall Workshop",
+    "pub_type": "paper",
+    "accolades": "none"
+  }
+]

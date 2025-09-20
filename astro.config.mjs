@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { execSync } from 'child_process';
+import fs from 'fs';
+import { SCHOLAR_USER_ID } from './src/consts';
 
 const gitSha = execSync('git rev-parse --short HEAD').toString().trim();
 

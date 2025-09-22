@@ -1,0 +1,70 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+import SocialHead from "./SocialHead.astro";
+interface Item {
+    href: string;
+    title: string;
+}
+const { items = [] }: { items?: Item[] } = Astro.props;
+---
+
+<header>
+    <nav class="standard-menu" aria-label="Main menu">
+        <h2><a href="/">{SITE_TITLE}</a></h2>
+        {
+            items.map((item) => (
+                <HeaderLink href={item.href}>{item.title}</HeaderLink>
+            ))
+        }
+        <SocialHead />
+    </nav>
+</header>
+
+<style>
+    header {
+        margin: 0;
+        padding: 0 1em;
+        background: white;
+        box-shadow: 0 2px 8px rgba(var(--black), 5%);
+    }
+    .standard-menu h2 {
+        margin: 0;
+        font-size: 1em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .standard-menu h2 a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    .standard-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .standard-menu a {
+        padding: 1em 0.5em;
+        color: var(--black);
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
+    }
+    .standard-menu a:hover {
+        border-bottom-color: var(--accent);
+    }
+    .standard-menu a.active {
+        text-decoration: none;
+        border-bottom-color: var(--accent);
+    }
+    /* For larger screens hide the menu container by default; header will control visibility */
+    .standard-menu {
+        display: flex;
+    }
+
+    @media (max-width: 720px) {
+        .standard-menu {
+            display: none;
+        }
+    }
+</style>

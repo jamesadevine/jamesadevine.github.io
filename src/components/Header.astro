@@ -1,117 +1,20 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import HamburgerMenu from "./HamburgerMenu.astro";
+import StandardMenu from "./StandardMenu.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection("blog");
+
+const items = [
+	{ href: "/", title: "Home" },
+	...(allPosts && allPosts.length > 0
+		? [{ href: "/posts", title: "Posts" }]
+		: []),
+	{ href: "/pdf/james-devine-cv-18-07-2025.pdf", title: "CV" },
+	{ href: "/publications", title: "Publications" },
+	{ href: "/patents", title: "Patents" },
+];
 ---
 
-<header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			{
-				allPosts && allPosts.length > 0 && (
-					<HeaderLink href="/posts">Posts</HeaderLink>
-				)
-			}
-			<HeaderLink href="/pdf/james-devine-cv-18-07-2025.pdf">
-				CV
-			</HeaderLink>
-			<HeaderLink href="/publications">Publications</HeaderLink>
-			<HeaderLink href="/patents">Patents</HeaderLink>
-		</div>
-		<div class="social-links">
-			<a href="https://github.com/jamesadevine" target="_blank">
-				<span class="sr-only">Go to James Devine's GitHub repo</span>
-				<svg
-					viewBox="0 0 16 16"
-					aria-hidden="true"
-					width="32"
-					height="32"
-					><path
-						fill="currentColor"
-						d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-					></path></svg
-				>
-			</a>
-			<a
-				href="https://www.linkedin.com/in/james-devine-a9371a38/"
-				target="_blank"
-			>
-				<span class="sr-only">Go to LinkedIn profile</span>
-				<svg
-					viewBox="0 0 32 32"
-					aria-hidden="true"
-					width="32"
-					height="32"
-					><path
-						fill="currentColor"
-						d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM9.4 27H5.7V12.1h3.7V27zm-1.9-17.1c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1c1.2 0 2.1.9 2.1 2.1s-.9 2.1-2.1 2.1zm19.5 17.1h-3.7v-7.2c0-1.7-.6-2.8-2.1-2.8-1.1 0-1.7.7-2 1.4-.1.3-.1.7-.1 1.1V27h-3.7s.1-12.3 0-13.9h3.7v2c.5-.8 1.4-2 3.5-2 2.6 0 4.5 1.7 4.5 5.4V27z"
-					></path></svg
-				>
-			</a>
-			<a
-				href="https://scholar.google.com/citations?user=22dM5lYAAAAJ"
-				target="_blank"
-			>
-				<span class="sr-only">Go to Google Scholar profile</span>
-				<svg
-					viewBox="0 0 24 24"
-					aria-hidden="true"
-					width="32"
-					height="32"
-					><path
-						fill="currentColor"
-						d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5 12 0z"
-					></path></svg
-				>
-			</a>
-		</div>
-	</nav>
-</header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	nav h2 a {
-		text-decoration: none;
-		color: var(--black);
-	}
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a:hover {
-		border-bottom-color: var(--accent);
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>
+<HamburgerMenu items={items} />
+<StandardMenu items={items} />

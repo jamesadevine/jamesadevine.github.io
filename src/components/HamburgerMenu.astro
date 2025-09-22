@@ -1,0 +1,130 @@
+---
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
+interface Item {
+    href: string;
+    title: string;
+}
+const { items = [] }: { items?: Item[] } = Astro.props;
+---
+
+<header>
+    <nav class="hamburger-menu" aria-label="Main menu">
+        <h2><a href="/">{SITE_TITLE}</a></h2>
+        <details>
+            <summary class="hamburger-button">
+                <span class="sr-only">Toggle menu</span>
+                <!-- simple hamburger icon -->
+                <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <path
+                        fill="currentColor"
+                        d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path>
+                </svg>
+            </summary>
+
+            <ul id="hamburger-list">
+                {
+                    items.map((item) => (
+                        <HeaderLink href={item.href}>{item.title}</HeaderLink>
+                    ))
+                }
+            </ul>
+        </details>
+    </nav>
+</header>
+
+<style>
+    .hamburger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hamburger-menu h2 {
+        margin: 0;
+        font-size: 1em;
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .hamburger-menu h2 a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    .hamburger-menu {
+        font-family: inherit;
+    }
+    .hamburger-menu details {
+        position: relative;
+    }
+    .hamburger-button {
+        background: transparent;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .hamburger-button svg {
+        display: block;
+    }
+    #hamburger-list {
+        list-style: none;
+        margin: 0.5rem 0 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        /* match header look: transparent background and no shadow */
+        background: transparent;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .hamburger-menu a {
+        padding: 1em 0.5em;
+        color: var(--black);
+        border-bottom: 4px solid transparent;
+        text-decoration: none;
+    }
+    .hamburger-menu a:hover {
+        border-bottom-color: var(--accent);
+    }
+    .hamburger-menu a.active {
+        text-decoration: none;
+        border-bottom-color: var(--accent);
+    }
+
+    /* For larger screens hide the menu container by default; header will control visibility */
+    .hamburger-menu {
+        display: none;
+    }
+
+    @media (max-width: 720px) {
+        .hamburger-menu {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+    /* Close the details when a link inside it is clicked (improves UX on mobile) */
+    document.addEventListener("click", function (e) {
+        const target = e.target;
+        // ensure we have an Element and use closest safely
+        const el =
+            target instanceof Element
+                ? target.closest(".hamburger-menu a")
+                : null;
+        if (el) {
+            const details = el
+                .closest(".hamburger-menu")
+                ?.querySelector("details");
+            if (details) details.removeAttribute("open");
+        }
+    });
+</script>

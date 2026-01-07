@@ -14,7 +14,7 @@ safe-outputs:
   create-issue:
 steps:
   - name: Install dependencies
-    run: snap install lychee
+    run: sudo snap install lychee
 ---
 
 # Daily broken link checker

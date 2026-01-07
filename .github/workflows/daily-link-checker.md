@@ -10,6 +10,7 @@ permissions:
 network: defaults
 tools:
   github:
+  bash:
 safe-outputs:
   create-issue:
 steps:

@@ -12,9 +12,12 @@ tools:
   github:
 safe-outputs:
   create-issue:
+steps:
+  - name: Install dependencies
+    run: snap install lychee
 ---
 
 # Daily broken link checker
 
-1. Use the check:links (specified in package.json scripts) to analyze the repository for any broken links..
+1. Use the check:links (specified in package.json scripts) to analyze the repository for any broken links.
 1. Create a Github issue for each broken link found.

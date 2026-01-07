@@ -11,12 +11,6 @@ retry_wait_time = 2
 # Keep this conservative to avoid getting rate-limited.
 max_concurrency = 8
 
-# Don't waste time checking mailto links.
-exclude_mail = true
-
 # Exclude URLs that commonly block automated link checking.
 # Adjust as needed if you want stricter checking.
-exclude = [
-  "https://www.linkedin.com/.*",
-  "https://scholar.google.com/.*"
-]
+exclude = ["https://www.linkedin.com/.*", "https://scholar.google.com/.*"]

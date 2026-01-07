@@ -90,6 +90,9 @@ jobs:
           persist-credentials: false
       - name: Create gh-aw temp directory
         run: bash /tmp/gh-aw/actions/create_gh_aw_tmp_dir.sh
+      - name: Install dependencies
+        run: snap install lychee
+
       - name: Configure Git credentials
         env:
           REPO_NAME: ${{ github.repository }}
@@ -435,7 +438,7 @@ jobs:
           cat << 'PROMPT_EOF' > "$GH_AW_PROMPT"
           # Daily broken link checker
           
-          1. Use the check:links (specified in package.json scripts) to analyze the repository for any broken links..
+          1. Use the check:links (specified in package.json scripts) to analyze the repository for any broken links.
           1. Create a Github issue for each broken link found.
           
           PROMPT_EOF

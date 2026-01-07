@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check:links": "npm run build && npx -y lychee --config ./lychee.toml --base ./dist \"./dist/**/*.html\""
+    "check:links": "npm run build && lychee --config ./lychee.toml --base-url https://jamesadevine.com \"./dist/**/*.html\""
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.1",

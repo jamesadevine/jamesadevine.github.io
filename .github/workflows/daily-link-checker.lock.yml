@@ -91,7 +91,7 @@ jobs:
       - name: Create gh-aw temp directory
         run: bash /tmp/gh-aw/actions/create_gh_aw_tmp_dir.sh
       - name: Install dependencies
-        run: snap install lychee
+        run: sudo snap install lychee
 
       - name: Configure Git credentials
         env:

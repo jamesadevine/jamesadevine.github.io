@@ -20,7 +20,7 @@
 # For more information: https://github.com/github/gh-aw/blob/main/.github/aw/github-agentic-workflows.md
 #
 #
-# frontmatter-hash: 5a9d1f701d09af8f4d7e5c7c07a45d75aee463adfc48cabfc4a07f934fdf6230
+# frontmatter-hash: 80f2df9116285356655f1f556ebd4efae7a705cff98de120f39af572d201d6c7
 
 name: "Daily broken link checker"
 "on":
@@ -89,16 +89,9 @@ jobs:
         uses: github/gh-aw/actions/setup@15d0e133ebb103ed42485353efea00d7c8c07304 # v0.42.16
         with:
           destination: /opt/gh-aw/actions
-      - name: Checkout .github and .agents folders
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-        with:
-          sparse-checkout: |
-            .github
-            .agents
-          depth: 1
-          persist-credentials: false
       - name: Create gh-aw temp directory
         run: bash /opt/gh-aw/actions/create_gh_aw_tmp_dir.sh
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Install lychee
         run: |-
           curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz

@@ -14,6 +14,7 @@ tools:
 safe-outputs:
   create-issue:
 steps:
+  - uses: actions/checkout@v4
   - name: Install lychee
     run: |
       curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz

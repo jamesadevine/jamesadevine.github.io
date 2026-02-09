@@ -7,9 +7,9 @@ heroImage: ./hero.svg
 
 [GitHub agentic workflows](https://github.github.com/gh-aw/) is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only supports GitHub actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time—oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.
 
-> **Note:** having agents operate in a pipeline context with full access to an Azure DevOps instance would be irresponsible. This was never allowed at any point. This is also a pet project/research/investigation. It will likely never see the light of day.
+> **Note:** having agents operate in a pipeline context with full access to an Azure DevOps instance would be irresponsible. This was never allowed at any point. This is also a pet project / research investigation. It will likely never see the light of day.
 
-There are four key pipeline jobs in Agentic Pipelines, mirroring that of the agentic workflows security model:
+There are four key pipeline jobs in Agentic Pipelines, mirroring that of the agentic workflows:
 
 * **Setup** - Preprocessing jobs that a user may optionally specify.
 * **Agent execution** - Agent completes the task specified by the user, optionally using outputs from the Setup job. The agent produces "safe outputs" that are later evaluated.
@@ -18,7 +18,7 @@ There are four key pipeline jobs in Agentic Pipelines, mirroring that of the age
 
 The key innovation is the separation of agent action from execution. When both are combined, agentic execution cannot be audited or analysed. In a separate two stage process it can!
 
-The task and constraints for the pipeline are specified in a markdown document, leverage markdown frontmatter to configure pipeline aspects. Here is an example markdown document for my copilot instructions reviewer:
+The task and constraints for the pipeline are specified in a markdown document and leverage markdown frontmatter to configure pipeline aspects. Here is an example markdown document for my copilot instructions reviewer:
 
 ```
 ---

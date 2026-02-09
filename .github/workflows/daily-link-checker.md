@@ -10,15 +10,18 @@ permissions:
 network: defaults
 tools:
   github:
-  bash: true
+  bash: ["npm:*", "cat", "ls"]
 safe-outputs:
   create-issue:
 steps:
-  - name: Install dependencies
-    run: sudo snap install lychee
+  - name: Install lychee
+    run: |
+      curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-x86_64-unknown-linux-gnu.tar.gz | tar xz
+      sudo mv lychee /usr/local/bin/
 ---
 
 # Daily broken link checker
 
-1. Use the check:links (specified in package.json scripts) to analyze the repository for any broken links.
-1. Create a Github issue for each broken link found.
+1. Run the command `npm run check:links` (specified in package.json scripts) to analyze the repository for any broken links.
+2. Parse the lychee output to identify any broken links.
+3. If broken links are found, create a single GitHub issue summarizing all broken links with their locations and HTTP status codes.

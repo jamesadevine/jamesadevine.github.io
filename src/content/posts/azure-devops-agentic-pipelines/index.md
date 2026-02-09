@@ -1,11 +1,11 @@
 ---
 title: "Agentic Pipelines"
-description: "Implementing Github agentic workflows for Azure DevOps pipelines"
+description: "Implementing GitHub agentic workflows for Azure DevOps pipelines"
 pubDate: 2026-02-09
 heroImage: ./hero.svg
 ---
 
-[Github agentic workflows](https://github.github.com/gh-aw/) is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only supports Github actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time--Oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.
+[GitHub agentic workflows](https://github.github.com/gh-aw/) is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only supports Github actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time—oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.
 
 > **Note:** having agents operate in a pipeline context with full access to an Azure DevOps instance would be irresponsible. This was never allowed at any point. This is also a pet project/research/investigation. It will likely never see the light of day.
 
@@ -87,7 +87,7 @@ The agent is provided with the `safeoutputs` mcp with the safe-outputs specified
 ```
 {
     "title": "A neat code change",
-    "description:" : "This is a really simple code change that you missed when writing the tool, you silly billy!",
+    "description": "This is a really simple code change that you missed when writing the tool, you silly billy!",
     "repository": "self",
     "patch": "name-of-patch-file.patch"
 }

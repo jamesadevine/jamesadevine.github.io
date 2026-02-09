@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-bvzihdzo> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="James Devine" href="https://jamesadevine.com/rss.xml"><meta name="generator" content="Astro v5.12.0"><!-- Font preloads --><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://jamesadevine.com/posts/azure-devops-agentic-pipelines/"><!-- Primary Meta Tags --><title>Agentic Pipelines</title><meta name="title" content="Agentic Pipelines"><meta name="description" content="Implementing Github agentic workflows for Azure DevOps pipelines"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://jamesadevine.com/posts/azure-devops-agentic-pipelines/"><meta property="og:title" content="Agentic Pipelines"><meta property="og:description" content="Implementing Github agentic workflows for Azure DevOps pipelines"><meta property="og:image" content="https://jamesadevine.com/_astro/og-image.CztXpZOy.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://jamesadevine.com/posts/azure-devops-agentic-pipelines/"><meta property="twitter:title" content="Agentic Pipelines"><meta property="twitter:description" content="Implementing Github agentic workflows for Azure DevOps pipelines"><meta property="twitter:image" content="https://jamesadevine.com/_astro/og-image.CztXpZOy.jpg"><style>:root{--accent: #27AE60;--accent-dark: #27AE60;--black: 15, 18, 25;--gray: 96, 115, 159;--gray-light: 229, 233, 240;--gray-dark: 34, 41, 57;--gray-gradient: rgba(var(--gray-light), 50%), #fff;--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%)}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:Atkinson;src:url(/fonts/atkinson-bold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}body{font-family:Atkinson,sans-serif;margin:0;padding:0;text-align:left;background:linear-gradient(var(--gray-gradient)) no-repeat;background-size:100% 600px;word-wrap:break-word;overflow-wrap:break-word;color:rgb(var(--gray-dark));font-size:20px;line-height:1.7}main{width:720px;max-width:calc(100% - 2em);margin:auto;padding:3em 1em}h1,h2,h3,h4,h5,h6{margin:0 0 .5rem;color:rgb(var(--black));line-height:1.2}h1{font-size:3.052em}h2{font-size:2.441em}h3{font-size:1.953em}h4{font-size:1.563em}h5{font-size:1.25em}strong,b{font-weight:700}a,a:hover{color:var(--accent)}p{margin-bottom:1em}.prose p{margin-bottom:2em}textarea{width:100%;font-size:16px}input{font-size:16px}table{width:100%}img{max-width:100%;height:auto;border-radius:8px}code{padding:2px 5px;background-color:rgb(var(--gray-light));border-radius:2px}pre{padding:1.5em;border-radius:8px}pre>code{all:unset}blockquote{border-left:4px solid var(--accent);padding:0 0 0 20px;margin:0;font-size:1.333em}hr{border:none;border-top:1px solid rgb(var(--gray-light))}@media (max-width: 720px){body{font-size:18px}main{padding:1em}}.sr-only{border:0;padding:0;margin:0;position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px);clip-path:inset(50%);white-space:nowrap}a[data-astro-cid-eimmu3lg]{display:inline-block;text-decoration:none}a[data-astro-cid-eimmu3lg].active{font-weight:bolder;text-decoration:underline}header[data-astro-cid-3ef6ksr2]{margin:0;padding:0 1em;background:#fff;box-shadow:0 2px 8px rgba(var(--black),5%)}h2[data-astro-cid-3ef6ksr2]{margin:0;font-size:1em}nav[data-astro-cid-3ef6ksr2] h2[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{text-decoration:none;color:var(--black)}nav[data-astro-cid-3ef6ksr2]{display:flex;align-items:center;justify-content:space-between}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{padding:1em .5em;color:var(--black);border-bottom:4px solid transparent;text-decoration:none}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]:hover{border-bottom-color:var(--accent)}nav[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2].active{text-decoration:none;border-bottom-color:var(--accent)}.social-links[data-astro-cid-3ef6ksr2],.social-links[data-astro-cid-3ef6ksr2] a[data-astro-cid-3ef6ksr2]{display:flex}@media (max-width: 720px){.social-links[data-astro-cid-3ef6ksr2]{display:none}}footer[data-astro-cid-sz7xmlte]{padding:2em 1em 6em;background:linear-gradient(var(--gray-gradient)) no-repeat;color:rgb(var(--gray));text-align:center}.social-links[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:1em}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]{text-decoration:none;color:rgb(var(--gray))}.social-links[data-astro-cid-sz7xmlte] a[data-astro-cid-sz7xmlte]:hover{color:rgb(var(--gray-dark))}.commit-sha[data-astro-cid-sz7xmlte]{display:flex;justify-content:center;gap:1em;margin-top:.5em}
+main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.hero-image[data-astro-cid-bvzihdzo]{width:100%}.hero-image[data-astro-cid-bvzihdzo] img[data-astro-cid-bvzihdzo]{display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.prose[data-astro-cid-bvzihdzo]{width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title[data-astro-cid-bvzihdzo]{margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title[data-astro-cid-bvzihdzo] h1[data-astro-cid-bvzihdzo]{margin:0 0 .5em}.date[data-astro-cid-bvzihdzo]{margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on[data-astro-cid-bvzihdzo]{font-style:italic}
+</style></head> <body data-astro-cid-bvzihdzo> <header data-astro-cid-3ef6ksr2> <nav data-astro-cid-3ef6ksr2> <h2 data-astro-cid-3ef6ksr2><a href="/" data-astro-cid-3ef6ksr2>James Devine</a></h2> <div class="internal-links" data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Home </a>  <a href="/posts" class="active" data-astro-cid-3ef6ksr2="true" data-astro-cid-eimmu3lg> Posts </a>  <!-- CV intentionally hidden (out of date). --> </div> <div class="social-links" data-astro-cid-3ef6ksr2> <a href="https://github.com/jamesadevine" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to James Devine's GitHub repo</span> <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://www.linkedin.com/in/james-devine-a9371a38/" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to LinkedIn profile</span> <svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M29 0H3C1.3 0 0 1.3 0 3v26c0 1.7 1.3 3 3 3h26c1.7 0 3-1.3 3-3V3c0-1.7-1.3-3-3-3zM9.4 27H5.7V12.1h3.7V27zm-1.9-17.1c-1.2 0-2.1-.9-2.1-2.1s.9-2.1 2.1-2.1c1.2 0 2.1.9 2.1 2.1s-.9 2.1-2.1 2.1zm19.5 17.1h-3.7v-7.2c0-1.7-.6-2.8-2.1-2.8-1.1 0-1.7.7-2 1.4-.1.3-.1.7-.1 1.1V27h-3.7s.1-12.3 0-13.9h3.7v2c.5-.8 1.4-2 3.5-2 2.6 0 4.5 1.7 4.5 5.4V27z" data-astro-cid-3ef6ksr2></path></svg> </a> <a href="https://scholar.google.com/citations?user=22dM5lYAAAAJ" target="_blank" data-astro-cid-3ef6ksr2> <span class="sr-only" data-astro-cid-3ef6ksr2>Go to Google Scholar profile</span> <svg viewBox="0 0 24 24" aria-hidden="true" width="32" height="32" data-astro-cid-3ef6ksr2><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5 12 0z" data-astro-cid-3ef6ksr2></path></svg> </a> </div> </nav> </header>  <main data-astro-cid-bvzihdzo> <article data-astro-cid-bvzihdzo> <div class="hero-image" data-astro-cid-bvzihdzo> <img src="/_astro/hero.yVj53vZZ_Z2voOnL.svg" alt data-astro-cid-bvzihdzo="true" loading="lazy" decoding="async" fetchpriority="auto" width="1020" height="510"> </div> <div class="prose" data-astro-cid-bvzihdzo> <div class="title" data-astro-cid-bvzihdzo> <div class="date" data-astro-cid-bvzihdzo> <time datetime="2026-02-09T00:00:00.000Z"> Feb 9, 2026 </time>  </div> <h1 data-astro-cid-bvzihdzo>Agentic Pipelines</h1> <hr data-astro-cid-bvzihdzo> </div>  <p><a href="https://github.github.com/gh-aw/">Github agentic workflows</a> is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only supports Github actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time—Oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.</p>
+<blockquote>
+<p><strong>Note:</strong> having agents operate in a pipeline context with full access to an Azure DevOps instance would be irresponsible. This was never allowed at any point. This is also a pet project/research/investigation. It will likely never see the light of day.</p>
+</blockquote>
+<p>There are four key pipeline jobs in Agentic Pipelines, mirroring that of the agentic workflows security model:</p>
+<ul>
+<li><strong>Setup</strong> - Preprocessing jobs that a user may optionally specify.</li>
+<li><strong>Agent execution</strong> - Agent completes the task specified by the user, optionally using outputs from the Setup job. The agent produces “safe outputs” that are later evaluated.</li>
+<li><strong>Threat detection</strong> - Safe outputs are analysed for threats e.g. prompt injection, DDOS, directory traversal attacks.</li>
+<li><strong>Safe output execution</strong> - Having been deemed safe, the outputs are executed. There is no agent involvement here. Outputs are evaluated against the contract, specified in the original definition.</li>
+</ul>
+<p>The key innovation is the separation of agent action from execution. When both are combined, agentic execution cannot be audited or analysed. In a separate two stage process it can!</p>
+<p>The task and constraints for the pipeline are specified in a markdown document, leverage markdown frontmatter to configure pipeline aspects. Here is an example markdown document for my copilot instructions reviewer:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>name: "Copilot instruction reviewer"</span></span>
+<span class="line"><span>description: "Reviews discrepancies between instructions and the codebase"</span></span>
+<span class="line"><span>triggers:</span></span>
+<span class="line"><span>  pipeline:</span></span>
+<span class="line"><span>    name: "Build Agentic Pipeline Compiler"</span></span>
+<span class="line"><span>    branches:</span></span>
+<span class="line"><span>      - main</span></span>
+<span class="line"><span>safe-outputs:</span></span>
+<span class="line"><span>  create_pr:</span></span>
+<span class="line"><span>    target_branch: main</span></span>
+<span class="line"><span>    auto_complete: false</span></span>
+<span class="line"><span>    delete_source_branch: true</span></span>
+<span class="line"><span>    squash_merge: true</span></span>
+<span class="line"><span>    reviewers:</span></span>
+<span class="line"><span>      - "James Devine"</span></span>
+<span class="line"><span>    labels:</span></span>
+<span class="line"><span>      - agent-created</span></span>
+<span class="line"><span>      - automated</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## Copilot instruction reviewer</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are responsible for ensuring the documentation in ⁠ .github/copilot-instructions.md ⁠ accurately reflects the actual implementation in the codebase.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Analysis Process</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>1.⁠ ⁠*Read the instructions file*: Start by reading ⁠ .github/copilot-instructions.md ⁠ thoroughly</span></span>
+<span class="line"><span>....</span></span></code></pre>
+<h2 id="security">Security</h2>
+<p>Even with the flow above, there are still ways to exploit the agent. For example, a malicious mcp could inject the prompt of the agent and have it leak secrets to a server. Or the agent could be poisoned and produce thousands of work items and PRs. We want to limit the possible damage. Enter: firewalling!</p>
+<p>Firewalls are deployed at two levels:</p>
+<ul>
+<li><strong>network:</strong> Allow only expected network calls by the agent. By default, just the copilot endpoints. Additional endpoints must be allow listed.</li>
+<li><strong>mcp:</strong> Allow only a subset of tools by the agent. Defaults to <code>ls</code>, <code>cat</code>, and a few other shell commands, plus any specified safe outputs.</li>
+</ul>
+<p>The mcp firewall also has the side benefit of <em>reducing</em> the choices the agent can make. For example, if the agent is supplied with too many tools or ones it cannot use (e.g. azure devops mcp with no token), the results can be disappointing. Reducing choice, in my experience, leads to greater success.</p>
+<h2 id="safe-outputs">Safe outputs</h2>
+<p>Safe outputs are a contract between the frontmatter of the pipeline definition, and the execution model. The front matter specifies the permitted safe outputs and their constraints:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>safe-outputs:</span></span>
+<span class="line"><span>  create_pr:</span></span>
+<span class="line"><span>    target_branch: main</span></span>
+<span class="line"><span>    auto_complete: false</span></span>
+<span class="line"><span>    delete_source_branch: true</span></span>
+<span class="line"><span>    squash_merge: true</span></span>
+<span class="line"><span>    reviewers:</span></span>
+<span class="line"><span>      - "James Devine"</span></span>
+<span class="line"><span>    labels:</span></span>
+<span class="line"><span>      - agent-created</span></span>
+<span class="line"><span>      - automated</span></span></code></pre>
+<p>The <code>create_pr</code> safe output has an implicit allowed repositories list of “self”. The rule this translates to at execution time is: <em>create a pr for self with main as base</em>. Any other repository reference is dropped.</p>
+<p>The agent is provided with the <code>safeoutputs</code> mcp with the safe-outputs specified by the user. When the <code>create_pr</code> tool is called, it generates a patch file, and a jsonl entry in the safe outputs file with details for the PR:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{</span></span>
+<span class="line"><span>    "title": "A neat code change",</span></span>
+<span class="line"><span>    "description:" : "This is a really simple code change that you missed when writing the tool, you silly billy!",</span></span>
+<span class="line"><span>    "repository": "self",</span></span>
+<span class="line"><span>    "patch": "name-of-patch-file.patch"</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>Each safe output also has a maximum number of outputs. In all cases, the default is one, and this can be raised in the front matter by the user. At threat detection time, the safe output count for each is evaluated and entries over the threshold are removed.</p>
+<h2 id="the-compiler">The compiler</h2>
+<p>A simple command line tool takes the markdown + frontmatter and turns it into a pipeline yaml definition. The CLI has commands that are used during agent and safe output execution:</p>
+<p><img alt="Help text of the agentic pipelines CLI. Create, compile, mcp, execute, proxy, mcp-firewall" loading="lazy" decoding="async" fetchpriority="auto" width="1328" height="570" src="/_astro/agentic-pipeline-compiler.BD6DAbB4_Z1RiPvw.webp" ></p>
+<h2 id="using-agentic-pipelines-to-build-agentic-pipelines">Using agentic pipelines to build agentic pipelines</h2>
+<p>Once I had the basic work item output safe output working:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>safe-outputs:</span></span>
+<span class="line"><span>  create_work_item:</span></span>
+<span class="line"><span>    work_item_type: Task</span></span>
+<span class="line"><span>    assignee: "James Devine"</span></span>
+<span class="line"><span>    tags:</span></span>
+<span class="line"><span>      - agent-created</span></span>
+<span class="line"><span>      - automated</span></span>
+<span class="line"><span>      - copilot:repo=azure-devops-agentic-pipelines@main</span></span></code></pre>
+<p>My pipelines were able to create work items that I could review and then assign to Github Copilot. A few minutes later, and I would have PRs ready that improved the code quality, added tests or fixed fundamental problems in the code for the project. Having the PR safe output going accelerated this process even further:</p>
+<p><img alt="An image of an agent created PR fixing tabulation of the compiler" loading="lazy" decoding="async" fetchpriority="auto" width="1600" height="772" src="/_astro/agentic-pipelines-pr.BKw7LwrN_1gmnqB.webp" ></p>
+<h2 id="safe-azure-devops-access">Safe Azure DevOps access?</h2>
+<p>I am not going to solve Azure DevOps access token scope. But given the security issues around supplying the agent with unfettered access to Azure DevOps, how do I make Agentic Pipelines <em>useful</em>? Enter… <strong>hooks</strong>!</p>
+<p>The hooks allow you to preprocess data for the agent to consume (the setup phase for agentic workflows). This gives the pipeline creator fine grained access control over what data the agent can see.</p>
+<p>With hooks implemented, I was able to download agent generated pipeline failure summaries across the project for the past N days. The pipeline summarises the summaries and gives a brief overview of what actions I should take, assigned as an Azure DevOps work item - yippee!</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>---</span></span>
+<span class="line"><span>name: "Release Readiness"</span></span>
+<span class="line"><span>description: "Given summaries, highlight common issues and identify action items to resolve ongoing issues"</span></span>
+<span class="line"><span>schedule: daily around 9am</span></span>
+<span class="line"><span>setup:</span></span>
+<span class="line"><span>  - task: PipAuthenticate@1</span></span>
+<span class="line"><span>    displayName: "Authenticate to Python Package Feed"</span></span>
+<span class="line"><span>  - bash: |</span></span>
+<span class="line"><span>      export UV_DEFAULT_INDEX=$PIP_INDEX_URL</span></span>
+<span class="line"><span>      export UV_EXTRA_INDEX_URL=$PIP_EXTRA_INDEX_URL</span></span>
+<span class="line"><span>      python -m pip install uv</span></span>
+<span class="line"><span>    displayName: Install pre-requisites</span></span>
+<span class="line"><span>  - bash: uv run {{ workspace }}/agents/scripts/download-summaries.py --output $(Agent.TempDirectory)/summaries --days 5 --definitions 85,1076,105,107,110,464,1084,84,363,576,584,1083</span></span>
+<span class="line"><span>    displayName: Run download summaries script</span></span>
+<span class="line"><span>    env:</span></span>
+<span class="line"><span>      SYSTEM_ACCESSTOKEN: $(System.AccessToken)</span></span>
+<span class="line"><span>  - publish: $(Agent.TempDirectory)/summaries</span></span>
+<span class="line"><span>    artifact: failure-summaries</span></span>
+<span class="line"><span>prepare:</span></span>
+<span class="line"><span>    - download: current</span></span>
+<span class="line"><span>      artifact: failure-summaries</span></span>
+<span class="line"><span>    - bash: |</span></span>
+<span class="line"><span>        mkdir {{ workspace }}/failure-summaries</span></span>
+<span class="line"><span>        cp -r $(Pipeline.Workspace)/failure-summaries  {{ workspace }}/failure-summaries</span></span>
+<span class="line"><span>safe-outputs:</span></span>
+<span class="line"><span>  create_work_item:</span></span>
+<span class="line"><span>      work_item_type: Task</span></span>
+<span class="line"><span>      assignee: "James Devine"</span></span>
+<span class="line"><span>      tags:</span></span>
+<span class="line"><span>        - agent-created</span></span>
+<span class="line"><span>        - automated</span></span>
+<span class="line"><span>---</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>## BVT Triage Summary</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>You are an expert build and test analyst. Your task is to analyze recent BVT (Build Verification Test) pipeline failures and provide actionable insights.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>### Context</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>The ⁠ ./failure-summaries ⁠ directory contains triage summary files from failing pipeline runs over the last 5 days. Each file represents a failed build and contains:</span></span>
+<span class="line"><span>•⁠  ⁠Test failures and error messages</span></span>
+<span class="line"><span>•⁠  ⁠Build configuration details</span></span>
+<span class="line"><span>•⁠  ⁠Potential root causes identified by automated triage</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>....</span></span>
+<span class="line"><span></span></span></code></pre>
+<h2 id="what-did-i-learn">What did I learn?</h2>
+<p>Before: I’d notice a doc was stale, add it to my mental backlog, and forget. Now: an agentic pipeline notices, files a PR, and I review it over coffee. The agents don’t make the work disappear—they make it show up.</p>
+<h2 id="whats-next">What’s next?</h2>
+<p>Agents thrive on routine. But the interesting problems aren’t routine—they span days, require context, need judgment calls. Pipelines are stateless; agents need memory. That’s the next problem I am going to tackle with this work: incrementally completing a long running task (e.g. pipeline refactor) over a number of days.</p>  </div> </article> </main> <footer data-astro-cid-sz7xmlte>
+&copy; 2026 James Devine. All rights reserved.
+<!-- <div class="social-links">
+		<a href="https://github.com/jamesadevine" target="_blank">
+			<span class="sr-only">Go to James Devine's GitHub repo</span>
+			<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+				><path
+					fill="currentColor"
+					d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+				></path></svg
+			>
+		</a>
+	</div> --> <div class="commit-sha" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Current Git commit SHA</span> <a href="https://github.com/jamesadevine/jamesadevine.github.io/commit/94777cc" target="_blank" data-astro-cid-sz7xmlte>94777cc</a> </div> </footer>  </body></html>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="clockGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151"/>
+      <stop offset="100%" style="stop-color:#1f2937"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative grid lines -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="600" y1="0" x2="600" y2="400"/>
+  </g>
+  
+  <!-- Stopwatch body -->
+  <circle cx="300" cy="200" r="100" fill="url(#clockGrad)" stroke="url(#accentGrad)" stroke-width="4"/>
+  <circle cx="300" cy="200" r="85" fill="none" stroke="#4b5563" stroke-width="1"/>
+  
+  <!-- Stopwatch button -->
+  <rect x="285" y="85" width="30" height="20" rx="4" fill="#374151" stroke="url(#accentGrad)" stroke-width="2"/>
+  
+  <!-- Clock tick marks -->
+  <g stroke="#6b7280" stroke-width="2">
+    <line x1="300" y1="125" x2="300" y2="135"/>
+    <line x1="300" y1="265" x2="300" y2="275"/>
+    <line x1="215" y1="200" x2="225" y2="200"/>
+    <line x1="375" y1="200" x2="385" y2="200"/>
+  </g>
+  
+  <!-- Clock hands -->
+  <line x1="300" y1="200" x2="300" y2="145" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round"/>
+  <line x1="300" y1="200" x2="345" y2="220" stroke="#9ca3af" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="300" cy="200" r="8" fill="url(#accentGrad)"/>
+  
+  <!-- Arrow pointing to agent -->
+  <path d="M 420 200 L 480 200" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 470 190 L 485 200 L 470 210" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Agent icon (stylized robot head) -->
+  <rect x="520" y="140" width="120" height="120" rx="20" fill="url(#clockGrad)" stroke="url(#accentGrad)" stroke-width="3"/>
+  
+  <!-- Agent antenna -->
+  <line x1="580" y1="140" x2="580" y2="115" stroke="url(#accentGrad)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="580" cy="108" r="8" fill="url(#accentGrad)"/>
+  
+  <!-- Agent eyes -->
+  <circle cx="555" cy="185" r="15" fill="#1a1a2e" stroke="#4ade80" stroke-width="2"/>
+  <circle cx="605" cy="185" r="15" fill="#1a1a2e" stroke="#4ade80" stroke-width="2"/>
+  <circle cx="555" cy="185" r="6" fill="#4ade80"/>
+  <circle cx="605" cy="185" r="6" fill="#4ade80"/>
+  
+  <!-- Agent mouth (processing indicator) -->
+  <rect x="550" y="220" width="60" height="8" rx="4" fill="#1a1a2e"/>
+  <rect x="550" y="220" width="35" height="8" rx="4" fill="url(#accentGrad)" opacity="0.8"/>
+  
+  <!-- Decorative particles -->
+  <circle cx="150" cy="100" r="3" fill="#4ade80" opacity="0.4"/>
+  <circle cx="680" cy="320" r="4" fill="#22d3ee" opacity="0.3"/>
+  <circle cx="720" cy="80" r="2" fill="#4ade80" opacity="0.5"/>
+  <circle cx="100" cy="300" r="3" fill="#22d3ee" opacity="0.4"/>
+  <circle cx="450" cy="350" r="2" fill="#4ade80" opacity="0.3"/>
+  
+  <!-- Text label -->
+  <text x="400" y="360" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#9ca3af" text-anchor="middle" letter-spacing="0.1em">TIME-TO-AGENT</text>
+  
+  <!-- Agent generated note -->
+  <text x="780" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280" text-anchor="end" opacity="0.6">agent generated</text>
+</svg>

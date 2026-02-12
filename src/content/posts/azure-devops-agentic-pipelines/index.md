@@ -13,7 +13,7 @@ There are four key pipeline jobs in Agentic Pipelines, mirroring that of the age
 
 * **Setup** - Preprocessing jobs that a user may optionally specify.
 * **Agent execution** - Agent completes the task specified by the user, optionally using outputs from the Setup job. The agent produces "safe outputs" that are later evaluated.
-* **Threat detection** - Safe outputs are analysed for threats e.g. prompt injection, DDOS, directory traversal attacks.
+* **Threat detection** - Safe outputs are analysed for threats e.g. prompt injection, DDoS, directory traversal attacks.
 * **Safe output execution** - Having been deemed safe, the outputs are executed. There is no agent involvement here. Outputs are evaluated against the contract, specified in the original definition.
 
 The key innovation is the separation of agent action from execution. When both are combined, agentic execution cannot be audited or analysed. In a separate two stage process it can!
@@ -48,7 +48,7 @@ You are responsible for ensuring the documentation in ⁠ .github/copilot-inst
 
 ### Analysis Process
 
-1.⁠ ⁠*Read the instructions file*: Start by reading ⁠ .github/copilot-instructions.md ⁠ thoroughly
+1. *Read the instructions file*: Start by reading `.github/copilot-instructions.md` thoroughly
 ....
 ```
 
@@ -169,10 +169,10 @@ You are an expert build and test analyst. Your task is to analyze recent BVT (Bu
 
 ### Context
 
-The ⁠ ./failure-summaries ⁠ directory contains triage summary files from failing pipeline runs over the last 5 days. Each file represents a failed build and contains:
-•⁠  ⁠Test failures and error messages
-•⁠  ⁠Build configuration details
-•⁠  ⁠Potential root causes identified by automated triage
+The `./failure-summaries` directory contains triage summary files from failing pipeline runs over the last 5 days. Each file represents a failed build and contains:
+- Test failures and error messages
+- Build configuration details
+- Potential root causes identified by automated triage
 
 ....
 

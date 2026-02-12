@@ -8,7 +8,7 @@ main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <ul>
 <li><strong>Setup</strong> - Preprocessing jobs that a user may optionally specify.</li>
 <li><strong>Agent execution</strong> - Agent completes the task specified by the user, optionally using outputs from the Setup job. The agent produces “safe outputs” that are later evaluated.</li>
-<li><strong>Threat detection</strong> - Safe outputs are analysed for threats e.g. prompt injection, DDOS, directory traversal attacks.</li>
+<li><strong>Threat detection</strong> - Safe outputs are analysed for threats e.g. prompt injection, DDoS, directory traversal attacks.</li>
 <li><strong>Safe output execution</strong> - Having been deemed safe, the outputs are executed. There is no agent involvement here. Outputs are evaluated against the contract, specified in the original definition.</li>
 </ul>
 <p>The key innovation is the separation of agent action from execution. When both are combined, agentic execution cannot be audited or analysed. In a separate two stage process it can!</p>
@@ -40,7 +40,7 @@ main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <span class="line"><span></span></span>
 <span class="line"><span>### Analysis Process</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>1.⁠ ⁠*Read the instructions file*: Start by reading ⁠ .github/copilot-instructions.md ⁠ thoroughly</span></span>
+<span class="line"><span>1. *Read the instructions file*: Start by reading `.github/copilot-instructions.md` thoroughly</span></span>
 <span class="line"><span>....</span></span></code></pre>
 <h2 id="security">Security</h2>
 <p>Even with the flow above, there are still ways to exploit the agent. For example, a malicious mcp could inject the prompt of the agent and have it leak secrets to a server. Or the agent could be poisoned and produce thousands of work items and PRs. We want to limit the possible damage. Enter: firewalling!</p>
@@ -130,10 +130,10 @@ main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 <span class="line"><span></span></span>
 <span class="line"><span>### Context</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>The ⁠ ./failure-summaries ⁠ directory contains triage summary files from failing pipeline runs over the last 5 days. Each file represents a failed build and contains:</span></span>
-<span class="line"><span>•⁠  ⁠Test failures and error messages</span></span>
-<span class="line"><span>•⁠  ⁠Build configuration details</span></span>
-<span class="line"><span>•⁠  ⁠Potential root causes identified by automated triage</span></span>
+<span class="line"><span>The `./failure-summaries` directory contains triage summary files from failing pipeline runs over the last 5 days. Each file represents a failed build and contains:</span></span>
+<span class="line"><span>- Test failures and error messages</span></span>
+<span class="line"><span>- Build configuration details</span></span>
+<span class="line"><span>- Potential root causes identified by automated triage</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>....</span></span>
 <span class="line"><span></span></span></code></pre>
@@ -152,4 +152,4 @@ main[data-astro-cid-bvzihdzo]{width:calc(100% - 2em);max-width:100%;margin:0}.he
 				></path></svg
 			>
 		</a>
-	</div> --> <div class="commit-sha" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Current Git commit SHA</span> <a href="https://github.com/jamesadevine/jamesadevine.github.io/commit/5cb18d4" target="_blank" data-astro-cid-sz7xmlte>5cb18d4</a> </div> </footer>  </body></html>
+	</div> --> <div class="commit-sha" data-astro-cid-sz7xmlte> <span class="sr-only" data-astro-cid-sz7xmlte>Current Git commit SHA</span> <a href="https://github.com/jamesadevine/jamesadevine.github.io/commit/e65a136" target="_blank" data-astro-cid-sz7xmlte>e65a136</a> </div> </footer>  </body></html>

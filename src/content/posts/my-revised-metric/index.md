@@ -13,7 +13,7 @@ Here are a few examples that have come from injecting this mindset into my devel
 
 ### Decreasing my time-to-awesome with improved agent time-to-awesome
 
-Before, I would spot issues while navigating a codebase but ignore them to stay focused on the task I set out to complete. Now, I have built a VS Code extension that lets VS Code Copilot create Azure DevOps for Github copilot issues contextually. My time to agent time-to-awesome is significantly reduced and the agent begins work outside my primary development flow.
+Before, I would spot issues while navigating a codebase but ignore them to stay focused on the task I set out to complete. Now, I have built a VS Code extension that lets VS Code Copilot create Azure DevOps work items for GitHub Copilot issues contextually. My time to agent time-to-awesome is significantly reduced and the agent begins work outside my primary development flow.
 
 ### Decreasing agent time-to-awesome with improved context
 

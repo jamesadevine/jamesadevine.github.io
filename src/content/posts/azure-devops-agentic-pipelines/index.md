@@ -5,7 +5,7 @@ pubDate: 2026-02-09
 heroImage: ./hero.svg
 ---
 
-[GitHub agentic workflows](https://github.github.com/gh-aw/) is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only supports GitHub actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time—oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.
+[GitHub agentic workflows](https://github.github.com/gh-aw/) is a pretty neat idea: agents that safely execute in a pipeline environment and perform routine tasks. Unfortunately, agentic workflows only support GitHub actions. What would it take to recreate the concept in Azure DevOps? It turns out: just me, my friend Claude (Opus 4.5), and time—oh! And persistence, though that is assumed when you spend time on CI/CD pipelines.
 
 > **Note:** having agents operate in a pipeline context with full access to an Azure DevOps instance would be irresponsible. This was never allowed at any point. This is also a pet project / research investigation. It will likely never see the light of day.
 
@@ -44,7 +44,7 @@ safe-outputs:
 
 ## Copilot instruction reviewer
 
-You are responsible for ensuring the documentation in ⁠ .github/copilot-instructions.md ⁠ accurately reflects the actual implementation in the codebase.
+You are responsible for ensuring the documentation in `.github/copilot-instructions.md` accurately reflects the actual implementation in the codebase.
 
 ### Analysis Process
 
@@ -117,7 +117,7 @@ safe-outputs:
       - copilot:repo=azure-devops-agentic-pipelines@main
 ```
 
-My pipelines were able to create work items that I could review and then assign to Github Copilot. A few minutes later, and I would have PRs ready that improved the code quality, added tests or fixed fundamental problems in the code for the project. Having the PR safe output going accelerated this process even further:
+My pipelines were able to create work items that I could review and then assign to GitHub Copilot. A few minutes later, and I would have PRs ready that improved the code quality, added tests or fixed fundamental problems in the code for the project. Having the PR safe output going accelerated this process even further:
 
 ![An image of an agent created PR fixing tabulation of the compiler](./agentic-pipelines-pr.jpeg)
 

@@ -6,6 +6,14 @@ interface Props {
     posts: CollectionEntry<"blog">[];
 }
 
+type HeroValue = string | { src: string };
+
+const getHeroSrc = (heroImage: HeroValue | undefined) =>
+    typeof heroImage === "string" ? heroImage : heroImage?.src;
+
+const isSvgHero = (heroImage: HeroValue | undefined) =>
+    getHeroSrc(heroImage)?.toLowerCase().endsWith(".svg") ?? false;
+
 const { posts } = Astro.props;
 ---
 
@@ -17,12 +25,23 @@ const { posts } = Astro.props;
                     <li>
                         <a href={`/posts/${post.id}/`}>
                             {post.data.heroImage && (
-                                <Image
-                                    width={720}
-                                    height={360}
-                                    src={post.data.heroImage}
-                                    alt={post.data.title || "Blog post image"}
-                                />
+                                isSvgHero(post.data.heroImage as HeroValue) ? (
+                                    <img
+                                        width="720"
+                                        height="360"
+                                        src={getHeroSrc(post.data.heroImage as HeroValue)}
+                                        alt={post.data.title || "Blog post image"}
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                ) : (
+                                    <Image
+                                        width={720}
+                                        height={360}
+                                        src={post.data.heroImage}
+                                        alt={post.data.title || "Blog post image"}
+                                    />
+                                )
                             )}
                             <h4 class="title">{post.data.title}</h4>
                             <p class="date">

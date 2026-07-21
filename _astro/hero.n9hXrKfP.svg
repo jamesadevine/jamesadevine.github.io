@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">AI-First Sustained Engineering</title>
+  <desc id="desc">A cinematic abstract hero with luminous gradients, orbital rings, and circuit-like paths behind the headline and tagline.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091120"/>
+      <stop offset="48%" stop-color="#10253c"/>
+      <stop offset="100%" stop-color="#173726"/>
+    </linearGradient>
+
+    <radialGradient id="haloLeft" cx="0%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#fb7185" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="haloRight" cx="100%" cy="100%" r="95%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.58"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="orbA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.95"/>
+      <stop offset="72%" stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="orbB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.9"/>
+      <stop offset="68%" stop-color="#f97316" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="lineA" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc" stop-opacity="0.05"/>
+      <stop offset="50%" stop-color="#7dd3fc" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <linearGradient id="lineB" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fb7185" stop-opacity="0.08"/>
+      <stop offset="55%" stop-color="#f59e0b" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </linearGradient>
+
+    <pattern id="grainGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="0.9"/>
+    </pattern>
+
+    <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#haloLeft)"/>
+  <rect width="1200" height="630" fill="url(#haloRight)"/>
+
+  <g opacity="0.9">
+    <ellipse cx="915" cy="210" rx="340" ry="170" fill="url(#orbA)"/>
+    <ellipse cx="960" cy="470" rx="260" ry="170" fill="url(#orbB)"/>
+    <ellipse cx="780" cy="520" rx="370" ry="170" fill="#22d3ee" fill-opacity="0.06" filter="url(#softBlur)"/>
+  </g>
+
+  <g fill="none" stroke="#e2e8f0" stroke-opacity="0.22">
+    <ellipse cx="920" cy="325" rx="260" ry="140" stroke-width="1.2"/>
+    <ellipse cx="920" cy="325" rx="220" ry="110" stroke-width="1"/>
+    <ellipse cx="920" cy="325" rx="180" ry="82" stroke-width="0.9"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M 430 188 C 595 150, 720 196, 850 250 C 970 300, 1060 312, 1160 292" stroke="url(#lineA)" stroke-width="3.4"/>
+    <path d="M 390 242 C 540 214, 645 246, 772 307 C 920 378, 1030 395, 1160 365" stroke="url(#lineB)" stroke-width="2.8"/>
+    <path d="M 460 300 C 610 295, 700 360, 860 432 C 980 486, 1070 498, 1160 485" stroke="url(#lineA)" stroke-width="2.4"/>
+    <path d="M 500 370 C 635 390, 740 448, 840 520" stroke="#7dd3fc" stroke-opacity="0.4" stroke-width="1.6" stroke-dasharray="3 10"/>
+  </g>
+
+  <g fill="#e2e8f0" fill-opacity="0.78">
+    <circle cx="860" cy="250" r="4"/>
+    <circle cx="995" cy="304" r="3.5"/>
+    <circle cx="765" cy="418" r="3"/>
+    <circle cx="1085" cy="451" r="4"/>
+  </g>
+
+  <rect x="95" y="54" width="640" height="152" rx="16" fill="#07101c" fill-opacity="0.42" stroke="#7dd3fc" stroke-opacity="0.25"/>
+  <text x="120" y="106" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="46" font-weight="700">
+    <tspan x="120" dy="0">AI-First Sustained</tspan>
+    <tspan x="120" dy="50">Engineering</tspan>
+  </text>
+  <text x="120" y="186" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="21" opacity="0.97">Stand still by engineering forward</text>
+
+  <rect width="1200" height="630" fill="url(#grainGrid)"/>
+  <rect x="0" y="0" width="1200" height="630" fill="#000000" fill-opacity="0.12"/>
+
+  <text x="1080" y="605" text-anchor="end" fill="#ffffff" fill-opacity="0.42" font-family="Segoe UI, sans-serif" font-size="12" font-style="italic">agent generated</text>
+</svg>

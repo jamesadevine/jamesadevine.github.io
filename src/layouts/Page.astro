@@ -6,6 +6,11 @@ import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
 
 const { title, description, heroImage } = Astro.props;
+type HeroValue = string | { src: string };
+const heroImageValue = heroImage as HeroValue | undefined;
+const heroImageSrc =
+    typeof heroImageValue === "string" ? heroImageValue : heroImageValue?.src;
+const isSvgHero = heroImageSrc?.toLowerCase().endsWith(".svg") ?? false;
 ---
 
 <html lang="en">
@@ -59,12 +64,23 @@ const { title, description, heroImage } = Astro.props;
                 <div class="hero-image">
                     {
                         heroImage && (
-                            <Image
-                                width={1020}
-                                height={510}
-                                src={heroImage}
-                                alt=""
-                            />
+                            isSvgHero ? (
+                                <img
+                                    width="1020"
+                                    height="510"
+                                    src={heroImageSrc}
+                                    alt=""
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            ) : (
+                                <Image
+                                    width={1020}
+                                    height={510}
+                                    src={heroImage}
+                                    alt=""
+                                />
+                            )
                         )
                     }
                 </div>

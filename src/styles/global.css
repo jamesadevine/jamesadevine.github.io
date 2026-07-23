@@ -125,6 +125,22 @@ img {
 	border-radius: 8px;
 }
 
+img:is(
+	[alt="checkmark, green background"],
+	[alt="exclaimation mark, yellow background"],
+	[alt="cross, red background"]
+) {
+	display: block;
+	width: 128px;
+	margin: 0;
+}
+
+.prose p:has(> img[alt="checkmark, green background"]) {
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+}
+
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));

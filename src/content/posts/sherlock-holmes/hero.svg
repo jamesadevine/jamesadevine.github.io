@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Becoming Sherlock Holmes</title>
+  <desc id="desc">A detective's magnifying glass reveals a paused virtual machine among technical clues, accompanied by a cap and pipe.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17242a"/>
+      <stop offset=".58" stop-color="#24363a"/>
+      <stop offset="1" stop-color="#402f2a"/>
+    </linearGradient>
+    <radialGradient id="lamplight" cx="74%" cy="18%" r="72%">
+      <stop offset="0" stop-color="#e7bd72" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#e7bd72" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="paperGrid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#f4e7ca" stroke-opacity=".045"/>
+    </pattern>
+    <pattern id="houndstooth" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 0h12v6H6v6H0zm12 12h12v6h-6v6h-6z" fill="#d5bd8c" fill-opacity=".68"/>
+      <path d="M12 0h12v12h-6V6h-6zM0 12h12v12H6v-6H0z" fill="#665441" fill-opacity=".88"/>
+    </pattern>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000000" flood-opacity=".42"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="8" flood-color="#000000" flood-opacity=".3"/>
+    </filter>
+    <clipPath id="lensClip">
+      <circle cx="492" cy="294" r="180"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="600" fill="url(#background)"/>
+  <rect width="1200" height="600" fill="url(#lamplight)"/>
+  <rect width="1200" height="600" fill="url(#paperGrid)"/>
+
+  <g opacity=".72" fill="none" stroke="#9db4b3" stroke-width="2">
+    <path d="M72 119h132l44 42h86"/>
+    <path d="M75 445h110l40-38h96"/>
+    <circle cx="72" cy="119" r="5" fill="#d89562" stroke="none"/>
+    <circle cx="75" cy="445" r="5" fill="#d89562" stroke="none"/>
+    <path d="M847 480h116l35-31h118" stroke-dasharray="7 9"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(790 58) rotate(3 174 100)">
+    <path d="M276 111c38 3 66 18 84 44-42 14-86 9-132-16z" fill="#6e5b45" stroke="#201b18" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M52 132C61 59 105 19 174 16c68-2 115 35 130 105l-54 26c-19-38-45-57-78-57-35 0-63 20-84 60z" fill="url(#houndstooth)" stroke="#201b18" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M174 18c-15 29-21 67-17 113M174 18c30 26 49 63 55 111" fill="none" stroke="#201b18" stroke-opacity=".72" stroke-width="5"/>
+    <path d="M82 125C42 126 15 141 0 169c47 15 99 5 154-30-22-10-46-15-72-14z" fill="#806b50" stroke="#201b18" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M151 130c17 10 34 11 51 1l19 60-43 20-43-21z" fill="#766149" stroke="#201b18" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M169 201l23 25" stroke="#201b18" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <circle cx="492" cy="294" r="190" fill="#0d1719" stroke="#d8b36b" stroke-width="18"/>
+    <circle cx="492" cy="294" r="174" fill="#d9efe8" fill-opacity=".09" stroke="#f7df9c" stroke-opacity=".35" stroke-width="3"/>
+    <path d="M628 428l142 141" stroke="#241b18" stroke-width="58" stroke-linecap="round"/>
+    <path d="M628 428l142 141" stroke="#8a5b3d" stroke-width="42" stroke-linecap="round"/>
+    <path d="M651 451l97 96" stroke="#d19a68" stroke-opacity=".42" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g clip-path="url(#lensClip)">
+    <rect x="310" y="112" width="364" height="364" fill="#101b1f"/>
+    <path d="M333 181h318M333 407h318" stroke="#6c8583" stroke-opacity=".35" stroke-width="2"/>
+    <text x="351" y="169" fill="#8ba5a2" font-family="Consolas, monospace" font-size="15">QMP / query-status</text>
+    <rect x="350" y="201" width="284" height="134" rx="5" fill="#152529" stroke="#78928f" stroke-opacity=".7"/>
+    <text x="376" y="240" fill="#91aaa7" font-family="Consolas, monospace" font-size="17">VM STATE</text>
+    <text x="376" y="292" fill="#f4d178" font-family="Consolas, monospace" font-size="35" font-weight="700">PAUSED</text>
+    <circle cx="604" cy="280" r="8" fill="#d75b4f"/>
+    <text x="351" y="371" fill="#8ba5a2" font-family="Consolas, monospace" font-size="15">localhost:1234</text>
+    <path d="M351 389h112" stroke="#d75b4f" stroke-width="3"/>
+    <path d="M586 136l-217 303" stroke="#ffffff" stroke-opacity=".08" stroke-width="32"/>
+  </g>
+
+  <g filter="url(#softShadow)" transform="translate(824 351) rotate(-5 170 85)">
+    <path d="M82 92c57 5 96 31 144 29 47-2 72-27 88-68" fill="none" stroke="#4f2f27" stroke-width="30" stroke-linecap="round"/>
+    <path d="M218 121c51 0 81-25 97-68" fill="none" stroke="#211b1a" stroke-width="17" stroke-linecap="round"/>
+    <path d="M20 34h83l-9 69c-4 34-19 52-42 52s-38-18-42-52z" fill="#814a35" stroke="#241b18" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="61" cy="35" rx="43" ry="19" fill="#a16343" stroke="#241b18" stroke-width="8"/>
+    <ellipse cx="61" cy="35" rx="28" ry="10" fill="#211b1a"/>
+    <path d="M27 68h65" stroke="#c98958" stroke-opacity=".48" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g font-family="Georgia, serif">
+  </g>
+  <text x="1168" y="574" fill="#ffffff" fill-opacity=".4" font-family="Segoe UI, sans-serif" font-size="11" font-style="italic" text-anchor="end">agent generated</text>
+</svg>

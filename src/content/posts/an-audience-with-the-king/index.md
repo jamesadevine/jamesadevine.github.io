@@ -9,7 +9,7 @@ In the 10th year of the micro:bit, I received a letter in the post.
 
 ![Letter from the king addressed to James Devine](letter.jpg)
 
-The letter contained an invitation to the awards ceremony for the Queen Elizabeth Prizes for Higher Education at St. James' Palace and a black tie dinner at Guild Hall, London. I was invited on behalf of Lancaster University who recognised my contributions to the project.
+The letter contained an invitation to the awards ceremony for the Queen Elizabeth Prizes for Higher Education at St. James' Palace and a black tie dinner at Guild Hall, London. The Queen Elizabeth Prize for Higher Education recognises exceptional contributions that have transformed higher education and delivered lasting benefits to students, institutions, and society. I was invited to receive the award on behalf of Lancaster University, a founding partner of the micro:bit project. The university recognised and remembered my significant contributions to the micro:bit project.
 
 You will have to take my word for it that I went to the palace. No images are allowed to be shared from the event, but the ceremony live stream _was_ available. I snapped an image from it of the back of my head (red circle)!
 

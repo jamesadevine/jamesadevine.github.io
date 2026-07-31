@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">AI-First Sustained Engineering</title>
-  <desc id="desc">A cinematic abstract hero with luminous gradients, orbital rings, and circuit-like paths behind the headline and tagline.</desc>
+  <desc id="desc">A cinematic abstract hero with luminous gradients, orbital rings, and circuit-like paths behind the headline: AI-First Sustained Engineering. Pay down the debt before it dictates the work.</desc>
 
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -82,12 +82,12 @@
     <circle cx="1085" cy="451" r="4"/>
   </g>
 
-  <rect x="95" y="54" width="640" height="152" rx="16" fill="#07101c" fill-opacity="0.42" stroke="#7dd3fc" stroke-opacity="0.25"/>
-  <text x="120" y="106" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="46" font-weight="700">
-    <tspan x="120" dy="0">AI-First Sustained</tspan>
-    <tspan x="120" dy="50">Engineering</tspan>
+  <rect x="48" y="40" width="1104" height="500" rx="16" fill="#07101c" fill-opacity="0.42" stroke="#7dd3fc" stroke-opacity="0.25"/>
+  <text x="100" y="174" fill="#ffffff" font-family="Segoe UI, sans-serif" font-size="88" font-weight="700">
+    <tspan x="100" dy="0">AI-First Sustained</tspan>
+    <tspan x="100" dy="100">Engineering</tspan>
   </text>
-  <text x="120" y="186" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="21" opacity="0.97">Stand still by engineering forward</text>
+  <text x="100" y="408" fill="#99f6e4" font-family="Segoe UI, sans-serif" font-size="34" opacity="0.97">Pay down the debt before it dictates the work</text>
 
   <rect width="1200" height="630" fill="url(#grainGrid)"/>
   <rect x="0" y="0" width="1200" height="630" fill="#000000" fill-opacity="0.12"/>

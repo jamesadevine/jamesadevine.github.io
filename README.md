@@ -46,6 +46,13 @@ The `src/content/` directory contains "collections" of related Markdown and MDX 
 
 Any static assets, like images, can be placed in the `public/` directory.
 
+### Favicons
+
+The shared `src/components/BaseHead.astro` component sets the favicon for every
+page. The icons in `public/` include a multi-resolution `favicon.ico` fallback
+and PNG variants at 16, 32, 48, 64, 128, and 256 pixels. When replacing them,
+keep the filenames and dimensions in sync with the icon links in `BaseHead.astro`.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
